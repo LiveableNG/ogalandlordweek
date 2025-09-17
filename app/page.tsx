@@ -382,7 +382,7 @@ export default function Home() {
                       <div className="space-y-1 text-xs text-gray-600">
                         <p>• 79% of tenants paid rent on time</p>
                         <p>• 95% of payments remitted within 7 days</p>
-                        <p>• 9 apartments optimized for rent</p>
+                        <p>• Rent for 9 apartments is optimized</p>
                         <p>• 2 apartments upgraded (+15% annual value)</p>
                       </div>
                     </div>
@@ -416,7 +416,7 @@ export default function Home() {
                     <div className="bg-white p-3 rounded border">
                       <h5 className="font-medium text-gray-800 text-xs mb-2">INCOME HEALTH</h5>
                       <div className="space-y-1 text-xs text-gray-600">
-                        <p>• Deola Badmus: 2 late payments, credit drop → ₦1.8m risk</p>
+                        <p>• Deola Badmus: 2 late payments, credit rating drop → ₦1.8m risk</p>
                         <p className="text-red-600 font-semibold">Action: Exit this tenant</p>
                         <p>• Flat A1 Orchid: ₦1.3m below market rate</p>
                         <p className="text-blue-600 font-semibold">Tip: Upgrade fittings for higher rent</p>
