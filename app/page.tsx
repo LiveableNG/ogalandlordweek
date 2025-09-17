@@ -455,8 +455,14 @@ export default function Home() {
                       <p>• New Court: Leaking pipe 45+ days → escalating costs</p>
                       <p>• Block C: Wall cracks → collapse risk in 18 months</p>
                       <p>• Lekki: Government demolition threat - Please pay attention</p>
-                      <h6 className="text-red-600 font-semibold text-xs mb-1">Last inspection: 18 months ago</h6>
+                    </div>
+                  </div>
+
+                  <div className="bg-white p-3 rounded border">
+                    <h5 className="font-medium text-gray-800 text-xs mb-2">Last inspection: 18 months ago</h5>
+                    <div className="space-y-1 text-xs text-gray-600">
                       <p>• Risk: 3 years rent on renovation when tenants move</p>
+                    </div>
                     </div>
                   </div>
 
