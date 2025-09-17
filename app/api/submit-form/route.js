@@ -6,9 +6,18 @@ export async function POST(request) {
     const body = await request.json();
     
     // Validate required fields
-    if (!body.name || !body.email) {
+    if (!body.name || !body.email || !body.phone) {
       return NextResponse.json(
-        { error: 'Name and email are required' },
+        { error: 'Name, email, and phone are required' },
+        { status: 400 }
+      );
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(body.email)) {
+      return NextResponse.json(
+        { error: 'Please enter a valid email address' },
         { status: 400 }
       );
     }
@@ -17,8 +26,16 @@ export async function POST(request) {
     const emailAlreadyExists = await emailExists(body.email);
     if (emailAlreadyExists) {
       return NextResponse.json(
-        { error: 'This email has already been registered' },
+        { error: 'This email has already been registered for Oga Landlord Week' },
         { status: 409 }
+      );
+    }
+
+    // Validate locations array
+    if (!body.locations || !Array.isArray(body.locations) || body.locations.length === 0) {
+      return NextResponse.json(
+        { error: 'Please select at least one property location' },
+        { status: 400 }
       );
     }
 
@@ -40,7 +57,7 @@ export async function POST(request) {
     return NextResponse.json(
       { 
         success: true, 
-        message: 'Form submitted successfully',
+        message: 'Welcome to Oga Landlord Week! We\'ll be in touch soon.',
         submissionId: submissionId
       },
       { status: 200 }

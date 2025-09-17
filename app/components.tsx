@@ -1814,14 +1814,17 @@ const MultiSelectDropdown = ({
     );
 };
 
-// Nigerian States Array
+// Nigerian States Array (prioritized order)
 const nigerianStates = [
+    // Priority states first
+    'Lagos', 'FCT Abuja', 'Rivers',
+    // Other states in alphabetical order
     'Abia', 'Adamawa', 'Akwa Ibom', 'Anambra', 'Bauchi', 'Bayelsa',
     'Benue', 'Borno', 'Cross River', 'Delta', 'Ebonyi', 'Edo',
-    'Ekiti', 'Enugu', 'FCT Abuja', 'Gombe', 'Imo', 'Jigawa',
+    'Ekiti', 'Enugu', 'Gombe', 'Imo', 'Jigawa',
     'Kaduna', 'Kano', 'Katsina', 'Kebbi', 'Kogi', 'Kwara',
-    'Lagos', 'Nasarawa', 'Niger', 'Ogun', 'Ondo', 'Osun',
-    'Oyo', 'Plateau', 'Rivers', 'Sokoto', 'Taraba', 'Yobe', 'Zamfara'
+    'Nasarawa', 'Niger', 'Ogun', 'Ondo', 'Osun',
+    'Oyo', 'Plateau', 'Sokoto', 'Taraba', 'Yobe', 'Zamfara'
 ];
 
 export const SignupForm = () => {
@@ -1842,6 +1845,8 @@ export const SignupForm = () => {
     });
 
     const [isVisible, setIsVisible] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
     const ref = useRef(null);
 
     useEffect(() => {
@@ -1888,10 +1893,12 @@ export const SignupForm = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        setIsSubmitting(true);
         
         // If virtual session selected, redirect to Calendly
         if (formData.sessionType === 'virtual') {
             window.open('https://calendly.com/your-calendly-link', '_blank');
+            setIsSubmitting(false);
             return;
         }
         
@@ -1907,7 +1914,7 @@ export const SignupForm = () => {
             const result = await response.json();
 
             if (response.ok) {
-                alert('Thank you for signing up for Landlord Week! We\'ll be in touch soon.');
+                setIsSuccess(true);
                 // Reset form
                 setFormData({
                     name: '',
@@ -1930,8 +1937,63 @@ export const SignupForm = () => {
         } catch (error) {
             console.error('Form submission error:', error);
             alert('Something went wrong. Please try again.');
+        } finally {
+            setIsSubmitting(false);
         }
     };
+
+    // Success State
+    if (isSuccess) {
+        return (
+            <section className="py-20 px-6 bg-gradient-to-br from-green-900 to-emerald-800">
+                <div className="max-w-4xl mx-auto text-center">
+                    <div className="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-8">
+                        <CheckCircle className="w-12 h-12 text-white" />
+                    </div>
+                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
+                        Welcome to Oga Landlord Week!
+                    </h2>
+                    <div className="space-y-6 text-xl text-green-100 max-w-3xl mx-auto mb-12">
+                        <p className="font-medium">
+                            Thank you for taking control of your property portfolio.
+                        </p>
+                        <p className="font-medium">
+                            Our team will be in touch within 24 hours to confirm your advisory session and provide you with access to your personalized dashboard.
+                        </p>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto">
+                        <h3 className="text-2xl font-bold text-white mb-4">What happens next?</h3>
+                        <div className="space-y-4 text-left">
+                            <div className="flex items-start space-x-3">
+                                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span className="text-white text-sm font-bold">1</span>
+                                </div>
+                                <p className="text-green-100">We'll send you a confirmation email with your session details</p>
+                            </div>
+                            <div className="flex items-start space-x-3">
+                                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span className="text-white text-sm font-bold">2</span>
+                                </div>
+                                <p className="text-green-100">Access to your personalized landlord dashboard</p>
+                            </div>
+                            <div className="flex items-start space-x-3">
+                                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span className="text-white text-sm font-bold">3</span>
+                                </div>
+                                <p className="text-green-100">Free access to the Landlord Finance Course</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        onClick={() => setIsSuccess(false)}
+                        className="mt-8 bg-white text-green-600 py-3 px-8 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
+                    >
+                        Submit Another Application
+                    </button>
+                </div>
+            </section>
+        );
+    }
 
     return (
         <section
@@ -2195,9 +2257,17 @@ export const SignupForm = () => {
                         
                         <button
                             type="submit"
-                            className="bg-gradient-to-r from-red-500 to-orange-500 text-white py-4 px-8 rounded-lg font-bold text-xl hover:from-red-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl"
+                            disabled={isSubmitting}
+                            className="bg-gradient-to-r from-red-500 to-orange-500 text-white py-4 px-8 rounded-lg font-bold text-xl hover:from-red-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                         >
-                            "Secure Your Spot Now →"
+                            {isSubmitting ? (
+                                <div className="flex items-center justify-center">
+                                    <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white mr-3"></div>
+                                    Submitting...
+                                </div>
+                            ) : (
+                                '"Secure Your Spot Now →"'
+                            )}
                         </button>
                     </div>
                 </form>
