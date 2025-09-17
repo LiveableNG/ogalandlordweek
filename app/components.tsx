@@ -1260,19 +1260,36 @@ export const CourseSection = () => {
     return (
         <section
             ref={ref}
-            className={`py-20 px-6 bg-gradient-to-br from-blue-900 to-indigo-800 transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'
+            className={`py-20 px-6 bg-gradient-to-br from-gray-900 to-black transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'
                 }`}
         >
             <div className="max-w-7xl mx-auto">
+                {/* Story-driven Header */}
                 <div className="text-center mb-16">
-                    <Target className="w-16 h-16 text-blue-400 mx-auto mb-6" />
-                    <h2 className="text-4xl md:text-6xl font-light text-white mb-6">
-                        Landlord Finance Mastery: Maximize Income & Build Wealth
+                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
+                        Think about it
                     </h2>
-                    <p className="text-xl text-blue-100 max-w-4xl mx-auto">
-                        Transform from a struggling landlord to a profitable real estate investor.
-                        Master the financial strategies that separate successful landlords from the rest.
-                    </p>
+                    
+                    <div className="space-y-6 text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+                        <p className="font-medium">
+                            Even if you know who paid rent, what next?
+                        </p>
+                        <p className="font-medium">
+                            Do you know how to grow that money?
+                        </p>
+                        <p className="font-medium">
+                            Do you know how to structure your finances so your properties keep funding themselves instead of draining you?
+                        </p>
+                    </div>
+
+                    <div className="bg-yellow-900 bg-opacity-20 border border-yellow-500 rounded-2xl p-8 max-w-4xl mx-auto">
+                        <p className="text-2xl md:text-3xl text-yellow-400 font-bold mb-4">
+                            That's what the Landlord Finance Course will show you.
+                        </p>
+                        <p className="text-lg text-gray-200">
+                            Simple, powerful lessons every Nigerian landlord needs to master — so you never fall into debt traps, bad investments, or blind spending.
+                        </p>
+                    </div>
                 </div>
 
                 <div className="grid lg:grid-cols-3 gap-8">
@@ -1290,7 +1307,7 @@ export const CourseSection = () => {
                                             <h4 className="text-lg font-semibold text-white mb-1">
                                                 Module {module.id}: {module.title}
                                             </h4>
-                                            <p className="text-blue-100 text-sm">
+                                            <p className="text-gray-300 text-sm">
                                                 {module.lessons.length} lessons
                                             </p>
                                         </div>
@@ -1307,7 +1324,7 @@ export const CourseSection = () => {
                                                 {module.lessons.map((lesson, index) => (
                                                     <div key={index} className="flex items-start space-x-3">
                                                         <CheckCircle className="w-4 h-4 text-green-400 mt-1 flex-shrink-0" />
-                                                        <p className="text-blue-100 text-sm">{lesson}</p>
+                                                        <p className="text-gray-200 text-sm">{lesson}</p>
                                                     </div>
                                                 ))}
                                             </div>
@@ -1322,7 +1339,7 @@ export const CourseSection = () => {
                     <div className="lg:col-span-1">
                         <div className="bg-white p-8 rounded-2xl shadow-2xl sticky top-8">
                             <div className="text-center mb-6">
-                                <p className="text-gray-600 line-through text-lg">$497</p>
+                                <p className="text-gray-600 line-through text-lg">₦150,000</p>
                                 <p className="text-4xl font-bold text-green-600">FREE</p>
                                 <p className="text-gray-600">During Landlord Week Only</p>
                             </div>

@@ -13,7 +13,8 @@ import {
   Clock,
   Users,
   Target,
-  TrendingDown
+  TrendingDown,
+  MapPin
 } from 'lucide-react';
 import {
   CourseSection,
@@ -461,7 +462,7 @@ export default function Home() {
               <div className="bg-red-100 border border-red-300 rounded-lg p-4">
                 <div className="flex items-start space-x-3">
                   <AlertTriangle className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
-                  <div>
+                <div>
                     <h4 className="font-semibold text-red-800 text-sm mb-1">Immediate Action Required</h4>
                     <p className="text-sm text-red-700">
                       <strong>Because every day you spend without this dashboard, money could already be slipping through your hands.</strong>
@@ -561,12 +562,12 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <DollarSign className="w-8 h-8 text-green-600" />
-              </div>
+                  </div>
               <h3 className="text-2xl font-bold text-gray-800 mb-4">Upfront Rent</h3>
               <p className="text-gray-600 leading-relaxed">
                 Get your rent payments in advance to improve cash flow and reduce collection risks. Access your rental income when you need it most.
               </p>
-            </div>
+                </div>
 
             {/* Renovation Finance */}
             <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
@@ -603,6 +604,123 @@ export default function Home() {
       </section>
 
       <CourseSection />
+
+      {/* Oga Landlord Week Section */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-block bg-gradient-to-r from-red-500 to-orange-500 text-white px-6 py-2 rounded-full text-sm font-semibold mb-6">
+              EXCLUSIVE EVENT
+            </div>
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-800 mb-8">
+              This is why we created Oga Landlord Week.
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              One powerful week where you:
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+            {/* Advisory Session */}
+            <div className="group relative bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-8 border border-yellow-200 hover:shadow-xl transition-all duration-300">
+              <div className="absolute top-4 right-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+                MOST POPULAR
+              </div>
+              <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Users className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Get Advisory Session</h3>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Our experts sit with you and show you how to stop losses and increase ROI on your properties.
+              </p>
+              <div className="bg-yellow-100 rounded-lg p-4">
+                <p className="text-yellow-800 font-semibold text-sm">✓ 1-on-1 consultation</p>
+                <p className="text-yellow-800 font-semibold text-sm">✓ Portfolio analysis</p>
+                <p className="text-yellow-800 font-semibold text-sm">✓ Action plan creation</p>
+              </div>
+            </div>
+
+            {/* Physical Events */}
+            <div className="group relative bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-200 hover:shadow-xl transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <MapPin className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Physical Events</h3>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Join us at one of our physical landlord events in Lagos or Abuja – connect with other successful landlords.
+              </p>
+              <div className="bg-green-100 rounded-lg p-4">
+                <p className="text-green-800 font-semibold text-sm">✓ Lagos & Abuja venues</p>
+                <p className="text-green-800 font-semibold text-sm">✓ Networking opportunities</p>
+                <p className="text-green-800 font-semibold text-sm">✓ Live Q&A sessions</p>
+              </div>
+            </div>
+
+            {/* Landlord Awards */}
+            <div className="group relative bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-8 border border-purple-200 hover:shadow-xl transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Target className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Landlord Awards</h3>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                By tenants, for good landlords – recognize and celebrate excellence in property management.
+              </p>
+              <div className="bg-purple-100 rounded-lg p-4">
+                <p className="text-purple-800 font-semibold text-sm">✓ Tenant recognition</p>
+                <p className="text-purple-800 font-semibold text-sm">✓ Industry validation</p>
+                <p className="text-purple-800 font-semibold text-sm">✓ Public recognition</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Success Stories */}
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 mb-12 border border-blue-200">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-bold text-gray-800 mb-4">Already, hundreds of landlords across Nigeria have joined.</h3>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="text-center p-6 bg-white rounded-xl shadow-sm">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="w-6 h-6 text-green-600" />
+                </div>
+                <p className="text-gray-700 text-lg font-medium">
+                  They are seeing their properties differently. They now know the truth.
+                </p>
+                  </div>
+              <div className="text-center p-6 bg-white rounded-xl shadow-sm">
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <TrendingDown className="w-6 h-6 text-blue-600" />
+                </div>
+                <p className="text-gray-700 text-lg font-medium">
+                  Some even discovered losses they didn't know about – and immediately took action to recover.
+                </p>
+                </div>
+              </div>
+            </div>
+
+          {/* Urgency Warning */}
+          <div className="relative bg-gradient-to-r from-red-500 to-orange-500 rounded-2xl p-8 text-center overflow-hidden">
+            <div className="absolute inset-0 bg-black bg-opacity-10"></div>
+            <div className="relative z-10">
+              <div className="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <AlertTriangle className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-3xl font-bold text-white mb-4">But here's the warning:</h3>
+              <p className="text-xl text-orange-100 mb-6">
+                Slots for advisory sessions are limited.
+              </p>
+              <p className="text-2xl font-bold text-white mb-6">
+                If you don't sign up now, you might miss the chance.
+              </p>
+              <div className="inline-block bg-white text-red-600 px-6 py-3 rounded-full font-bold text-lg">
+                ⚠️ LIMITED SPOTS AVAILABLE
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <SignupForm />
 
