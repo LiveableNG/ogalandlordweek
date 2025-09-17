@@ -50,7 +50,7 @@ const HeroSection = () => {
       <div className={`text-center px-6 z-10 max-w-5xl transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
 
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
-          Oga Landlord… 
+          Oga Landlord…
           <br />
           Your property dey shine outside — but inside, your money may be burning quietly.
         </h1>
@@ -73,35 +73,95 @@ const ParallaxSection = () => {
   return (
     <section className="relative h-screen overflow-hidden">
       {/* Fixed background image */}
-       <div 
-         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+       <div
+         className="absolute inset-0 w-full h-full bg-contain bg-center bg-no-repeat"
          style={{
-           backgroundImage: 'url(/page-2.1.png)',
+           backgroundImage: 'url(/page-2.png)',
            backgroundPosition: 'center',
-           backgroundSize: 'cover'
+           backgroundSize: 'contain',
+           backgroundRepeat: 'no-repeat'
          }}
        />
-       
-       {/* Text overlay */}
-       <div className="absolute inset-0 flex items-center justify-center z-10">
-         <div className="bg-black bg-opacity-80 rounded-lg p-8 text-center max-w-4xl mx-6">
-           <h2 className="text-4xl md:text-6xl font-bold text-white mb-2">
-             Oga Landlord
-           </h2>
-           <p className="text-lg md:text-xl text-white mb-4 font-mono">
-             /Ogaˈlænd.lɔːd/
-           </p>
-           <p className="text-sm md:text-base text-white mb-6">
-             noun
-           </p>
-           <p className="text-base md:text-lg text-white mb-6 leading-relaxed max-w-3xl mx-auto">
-             A young (and getting younger every year) male, female who has inherited or invests in property (or is intending to) with clarity, knows the nitti-gritties of how to get great ROI like a good businessman should, and understands that capital appreciation is as important as rent. Usually making money with peace of mind, not shouting and fighting everyday. Does not regret building houses or inheriting them.
-           </p>
-           <p className="text-sm md:text-base text-blue-300">
-             Similar: Fun, helping tenants become productive, healthy, legacy-conscious
-           </p>
-         </div>
-       </div>
+
+      {/* Text overlay */}
+      {/* <div className="absolute inset-0 flex items-center justify-center z-10">
+        <div className="bg-black bg-opacity-80 rounded-lg p-8 text-center max-w-4xl mx-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-2">
+            Oga Landlord
+          </h2>
+          <p className="text-lg md:text-xl text-white mb-4 font-mono">
+            /Ogaˈlænd.lɔːd/
+          </p>
+          <p className="text-sm md:text-base text-white mb-6">
+            noun
+          </p>
+          <p className="text-base md:text-lg text-white mb-6 leading-relaxed max-w-3xl mx-auto">
+            A young (and getting younger every year) male, female who has inherited or invests in property (or is intending to) with clarity, knows the nitti-gritties of how to get great ROI like a good businessman should, and understands that capital appreciation is as important as rent. Usually making money with peace of mind, not shouting and fighting everyday. Does not regret building houses or inheriting them.
+          </p>
+          <p className="text-sm md:text-base text-blue-300">
+            Similar: Fun, helping tenants become productive, healthy, legacy-conscious
+          </p>
+        </div>
+      </div> */}
+    </section>
+  );
+};
+
+const ProblemStorySection = () => {
+  return (
+    <section className="relative h-screen overflow-hidden">
+      {/* Video background */}
+      <div className="absolute inset-0 w-full h-full">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/page-3.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black bg-opacity-60" />
+
+      {/* Text content */}
+      <div className="relative z-10 h-full flex items-center justify-center">
+        <div className="text-center px-6 max-w-5xl">
+          <div className="space-y-8">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
+              The Hard Questions
+            </h2>
+
+            <div className="space-y-6 text-xl md:text-2xl text-white">
+              <p className="font-medium">
+                ❓ Do you know, right now, which of your tenants has paid rent — and who is still owing?
+              </p>
+              <p className="font-medium">
+                ❓ Do you know how much you've spent on maintenance in the last 6 months — and whether it's eating into your profit?
+              </p>
+              <p className="font-medium">
+                ❓ Can you prove, with real numbers, whether your property is making you money… or quietly draining it?
+              </p>
+            </div>
+
+            <div className="space-y-6 text-xl md:text-2xl text-red-400 font-bold">
+              <p>The truth? Most landlords can't.</p>
+              <p>And that is how money burns away quietly.</p>
+              <p>And that is how generational wealth disappears.</p>
+            </div>
+
+            <div className="space-y-6 text-xl md:text-2xl text-yellow-400 font-medium">
+              <p>And if you're looking to own your first property:</p>
+              <p>Do you know the visibility and control you'll need to avoid falling into the same trap?</p>
+              <p className="text-red-400 font-bold">
+                Or will you just let life — and tenants — run the show instead of you?
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
@@ -240,6 +300,7 @@ export default function Home() {
     <div className="font-sans">
       <HeroSection />
       <ParallaxSection />
+      <ProblemStorySection />
 
       {/* Section 1: Portfolio */}
       <section className="py-20 px-6 bg-gray-50">
