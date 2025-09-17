@@ -327,9 +327,11 @@ export default function Home() {
                     <p className="text-sm text-gray-600 font-medium">Units</p>
                   </div>
                   <p className="text-2xl font-bold text-blue-600">42</p>
-                  <p className="text-xs text-gray-500">6 Properties</p>
                   <div className="mt-1 text-xs text-gray-500">
-                    <p>8 Abuja, 30 Lagos, 4 Oyo</p>
+                    <div className="flex justify-between items-center">
+                      <span>8 Abuja, 30 Lagos, 4 Oyo</span>
+                      <span>6 Properties</span>
+                    </div>
                     <p className="text-red-600">4 vacant (10.5%)</p>
                   </div>
                 </div>
