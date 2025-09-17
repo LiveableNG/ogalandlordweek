@@ -12,6 +12,8 @@ import {
   Home as HomeIcon,
   Clock,
   Users,
+  Target,
+  TrendingDown
 } from 'lucide-react';
 import {
   CourseSection,
@@ -468,6 +470,134 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Strategic Insights and Opportunities Section */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
+              About to become a landlord or looking to expand your portfolio?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              You might be missing information required to make decisions:
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Opportunities in your area */}
+            <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
+              <div className="flex items-start space-x-4">
+                <BarChart3 className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl font-bold text-green-800 mb-3">Opportunities in your area</h3>
+                  <div className="space-y-3 text-gray-700">
+                    <p className="font-semibold text-base">Short-let demand in your area is up 30%</p>
+                    <ul className="space-y-2 text-sm">
+                      <li>• Converting 1 vacant unit could earn ₦2m more yearly</li>
+                      <li>• Converting a block of duplexes into small units could double your annual income</li>
+                      <li>• Buy with clarity, not the wrong property — Consider geographic diversification</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Market Analysis */}
+            <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+              <div className="flex items-start space-x-4">
+                <Target className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl font-bold text-blue-800 mb-3">Market Analysis</h3>
+                  <div className="space-y-3 text-gray-700">
+                    <p className="font-semibold text-base">Your properties appreciated 22% but you're under-pricing rent</p>
+                    <ul className="space-y-2 text-sm">
+                      <li>• 100% concentration in Lagos - market downturn risk</li>
+                      <li>• Without updated valuation, missing sales potential</li>
+                      <li>• Market downturn could slash income heavily — consider diversifying</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Strategic Recommendations */}
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-6 rounded-r-lg">
+              <div className="flex items-start space-x-4">
+                <TrendingDown className="w-6 h-6 text-purple-600 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl font-bold text-purple-800 mb-3">Strategic Recommendations</h3>
+                  <div className="space-y-3 text-gray-700">
+                    <p className="font-semibold text-base">Make informed decisions with real market data</p>
+                    <ul className="space-y-2 text-sm">
+                      <li>• Geographic diversification to reduce risk</li>
+                      <li>• Property type optimization based on local demand</li>
+                      <li>• Timing your investments with market cycles</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Supercharging Your Assets Section */}
+      <section className="py-20 px-6 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
+              Supercharging your assets
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              Because real Oga Landlords have this transparency, they have clarity on their income, can make better decisions, and also access services such as:
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Upfront Rent */}
+            <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <DollarSign className="w-8 h-8 text-green-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Upfront Rent</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Get your rent payments in advance to improve cash flow and reduce collection risks. Access your rental income when you need it most.
+              </p>
+            </div>
+
+            {/* Renovation Finance */}
+            <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <HomeIcon className="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Renovation Finance</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Finance property improvements and upgrades without depleting your savings. Increase property value and rental income potential.
+              </p>
+            </div>
+
+            {/* Rent Guarantee */}
+            <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
+              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <CheckCircle className="w-8 h-8 text-purple-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Rent Guarantee by AXA Mansard</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Never worry about defaults again. Get guaranteed rent payments even when tenants don't pay, protecting your income stream.
+              </p>
+            </div>
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="text-center mt-12">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              <span className="font-semibold text-gray-800">These services are only available to landlords with full portfolio transparency.</span> 
+              <br />
+              Start your journey to becoming a true Oga Landlord today.
+            </p>
           </div>
         </div>
       </section>
