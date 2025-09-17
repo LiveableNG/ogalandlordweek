@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { saveFormSubmission, emailExists } from '../../../lib/database';
+import { saveFormSubmission } from '../../../lib/database';
 
 export async function POST(request) {
   try {
@@ -22,19 +22,12 @@ export async function POST(request) {
       );
     }
 
-    // Check if email already exists
-    const emailAlreadyExists = await emailExists(body.email);
-    if (emailAlreadyExists) {
-      return NextResponse.json(
-        { error: 'This email has already been registered for Oga Landlord Week' },
-        { status: 409 }
-      );
-    }
+    // Note: We allow multiple submissions with the same email since this is a form submissions table, not a users table
 
-    // Validate locations array
-    if (!body.locations || !Array.isArray(body.locations) || body.locations.length === 0) {
+    // Validate locations array (optional)
+    if (body.locations && !Array.isArray(body.locations)) {
       return NextResponse.json(
-        { error: 'Please select at least one property location' },
+        { error: 'Locations must be an array' },
         { status: 400 }
       );
     }
