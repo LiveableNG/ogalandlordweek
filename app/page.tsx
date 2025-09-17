@@ -302,6 +302,182 @@ export default function Home() {
       <ParallaxSection />
       <ProblemStorySection />
 
+      {/* Dashboard Reveal Section */}
+      <section className="py-20 px-6 bg-gradient-to-br from-gray-900 to-black text-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              Do you have full visibility of your portfolio in real time?
+            </h2>
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+              This is what our Landlord Dashboard gives you. Without it, you are at serious risk. With it, you finally become the true Oga.
+            </p>
+          </div>
+
+          {/* Portfolio Overview Row */}
+          <div className="bg-white rounded-2xl shadow-2xl p-8 mb-12">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">Portfolio Overview</h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                <div className="flex items-center space-x-3 mb-3">
+                  <HomeIcon className="w-6 h-6 text-blue-600" />
+                  <h4 className="font-semibold text-gray-800">Units</h4>
+                </div>
+                <p className="text-3xl font-bold text-blue-600">42</p>
+                <p className="text-sm text-gray-600">6 Properties</p>
+                <div className="mt-2 text-xs text-gray-500">
+                  <p>8 in Abuja, 30 in Lagos, 4 in Oyo</p>
+                  <p className="text-red-600">4 vacant units (10.5% Vacancy Rate)</p>
+                </div>
+              </div>
+
+              <div className="bg-green-50 p-6 rounded-lg border border-green-200">
+                <div className="flex items-center space-x-3 mb-3">
+                  <Users className="w-6 h-6 text-green-600" />
+                  <h4 className="font-semibold text-gray-800">Tenants</h4>
+                </div>
+                <p className="text-3xl font-bold text-green-600">38</p>
+                <p className="text-sm text-red-600 font-semibold">Default Rate: 12%</p>
+              </div>
+
+              <div className="bg-purple-50 p-6 rounded-lg border border-purple-200">
+                <div className="flex items-center space-x-3 mb-3">
+                  <DollarSign className="w-6 h-6 text-purple-600" />
+                  <h4 className="font-semibold text-gray-800">Total Rental Value</h4>
+                </div>
+                <p className="text-3xl font-bold text-purple-600">₦59m</p>
+                <p className="text-sm text-gray-600">Annual</p>
+              </div>
+
+              <div className="bg-orange-50 p-6 rounded-lg border border-orange-200">
+                <div className="flex items-center space-x-3 mb-3">
+                  <BarChart3 className="w-6 h-6 text-orange-600" />
+                  <h4 className="font-semibold text-gray-800">Revenue Status</h4>
+                </div>
+                <div className="space-y-1 text-sm">
+                  <p className="text-gray-600">Expected: <span className="font-bold text-orange-600">₦52m</span></p>
+                  <p className="text-gray-600">Collected: <span className="font-bold text-green-600">₦41m (79%)</span></p>
+                  <p className="text-gray-600">Outstanding: <span className="font-bold text-red-600">₦11m</span></p>
+                  <p className="text-xs text-gray-500">7 tenants owe you</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Performance Sections */}
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* PERFORMING/HEALTHY */}
+            <div className="bg-green-900 bg-opacity-20 border border-green-500 rounded-2xl p-6">
+              <div className="flex items-center space-x-3 mb-6">
+                <CheckCircle className="w-8 h-8 text-green-400" />
+                <h3 className="text-2xl font-bold text-green-400">PERFORMING/HEALTHY</h3>
+              </div>
+
+              <div className="space-y-6">
+                <div className="bg-green-800 bg-opacity-30 p-4 rounded-lg">
+                  <h4 className="font-bold text-green-300 mb-3">INCOME MANAGEMENT SUCCESS</h4>
+                  <ul className="space-y-2 text-sm text-gray-200">
+                    <li>• 79% of your tenants paid rent on time</li>
+                    <li>• 95% of rent payments were remitted to you within 7 days</li>
+                    <li>• Your current rent for 9 apartments is optimized</li>
+                    <li>• PM recommended upgrades in 2 apartments, raising annual rent value by 15%</li>
+                  </ul>
+                </div>
+
+                <div className="bg-green-800 bg-opacity-30 p-4 rounded-lg">
+                  <h4 className="font-bold text-green-300 mb-3">VACANCY MANAGEMENT WINS</h4>
+                  <ul className="space-y-2 text-sm text-gray-200">
+                    <li>• PM reduced vacancy rate from 18% → 10.5% in the last year</li>
+                    <li>• 92% of tenants renewed under PM's management (above market avg of 75%)</li>
+                  </ul>
+                </div>
+
+                <div className="bg-green-800 bg-opacity-30 p-4 rounded-lg">
+                  <h4 className="font-bold text-green-300 mb-3">MAINTENANCE SUCCESS</h4>
+                  <ul className="space-y-2 text-sm text-gray-200">
+                    <li>• 3 routine inspections caught issues that would have cost ₦3.2m if ignored</li>
+                    <li>• Average complaint resolution: 3 days (industry avg: 7 days)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* UNDERPERFORMING/AT RISK */}
+            <div className="bg-yellow-900 bg-opacity-20 border border-yellow-500 rounded-2xl p-6">
+              <div className="flex items-center space-x-3 mb-6">
+                <AlertTriangle className="w-8 h-8 text-yellow-400" />
+                <h3 className="text-2xl font-bold text-yellow-400">UNDERPERFORMING/AT RISK</h3>
+              </div>
+
+              <div className="space-y-6">
+                <div className="bg-yellow-800 bg-opacity-30 p-4 rounded-lg">
+                  <h4 className="font-bold text-yellow-300 mb-3">INCOME HEALTH</h4>
+                  <ul className="space-y-2 text-sm text-gray-200">
+                    <li>• Deola Badmus has paid rent late twice in the last 3 years and her credit scores dropped in last 6 months → you risk losing ₦1.8m</li>
+                    <li>• <span className="font-bold">Suggested action:</span> Ask your PM to exit this tenant</li>
+                    <li>• Rent of your 2-bed apartment [Flat A1] in Orchid is currently below average by about ₦1.3m after comparison with similar apartments in the area</li>
+                    <li>• <span className="font-bold">Tip:</span> Upgrade fittings (e.g. POP ceiling, modern tiles, repainting) to justify higher rent</li>
+                  </ul>
+                </div>
+
+                <div className="bg-yellow-800 bg-opacity-30 p-4 rounded-lg">
+                  <h4 className="font-bold text-yellow-300 mb-3">VACANCY STATUS</h4>
+                  <ul className="space-y-2 text-sm text-gray-200">
+                    <li>• 3 apartments have been vacant for 90+ days → ₦2.1m lost in rent already (₦22,100 daily)</li>
+                  </ul>
+                </div>
+
+                <div className="bg-yellow-800 bg-opacity-30 p-4 rounded-lg">
+                  <h4 className="font-bold text-yellow-300 mb-3">MAINTENANCE EFFICIENCY</h4>
+                  <ul className="space-y-2 text-sm text-gray-200">
+                    <li>• You're spending 23% of your income on maintenance</li>
+                    <li>• 80% of expenses are plumbing-related</li>
+                    <li>• You're also spending ₦1.2m more than the industry average for your portfolio size</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* CRITICAL */}
+            <div className="bg-red-900 bg-opacity-20 border border-red-500 rounded-2xl p-6">
+              <div className="flex items-center space-x-3 mb-6">
+                <XCircle className="w-8 h-8 text-red-400" />
+                <h3 className="text-2xl font-bold text-red-400">CRITICAL</h3>
+              </div>
+
+              <div className="space-y-6">
+                <div className="bg-red-800 bg-opacity-30 p-4 rounded-lg">
+                  <h4 className="font-bold text-red-300 mb-3">PROPERTY DAMAGE RISK</h4>
+                  <ul className="space-y-2 text-sm text-gray-200">
+                    <li>• There has been a leaking pipe at New Court for over 45 days. You might end up spending more to fix it due to worsening conditions and rising costs</li>
+                    <li>• Wall Cracks in Block C could escalate to building collapse in 18 months if ignored</li>
+                    <li>• Government has announced its intention to demolish properties in Lekki. Please pay attention to that</li>
+                    <li>• <span className="font-bold">LAST INSPECTION REPORT:</span> 18 months</li>
+                    <li>• Considering inflation (avg. +18% yearly) and lack of visibility, you are at risk of spending 3 years of rent on renovation when the tenants move out</li>
+                  </ul>
+                </div>
+
+                <div className="bg-red-800 bg-opacity-30 p-4 rounded-lg">
+                  <h4 className="font-bold text-red-300 mb-3">POTENTIAL INCOME LOSS RISK</h4>
+                  <ul className="space-y-2 text-sm text-gray-200">
+                    <li>• 2 tenants who are 8 months into their tenancy have not received any rent renewal reminders — You could lose ₦3.6m next year if they don't renew</li>
+                    <li>• You have not reviewed rent on 3 units in the last 4 years</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Message */}
+          <div className="text-center mt-12">
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+              <span className="text-red-400 font-bold">Because every day you spend without this dashboard, money could already be slipping through your hands.</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Section 1: Portfolio */}
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
