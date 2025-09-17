@@ -1698,21 +1698,147 @@ export const ReputationTracker = () => {
   );
 };
 
+// Custom Multi-Select Component
+const MultiSelectDropdown = ({ 
+    options, 
+    selectedValues, 
+    onChange, 
+    placeholder = "Select options...",
+    className = ""
+}: {
+    options: string[];
+    selectedValues: string[];
+    onChange: (values: string[]) => void;
+    placeholder?: string;
+    className?: string;
+}) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
+    const dropdownRef = useRef<HTMLDivElement>(null);
+
+    // Close dropdown when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setIsOpen(false);
+                setSearchTerm('');
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
+    const filteredOptions = options.filter(option =>
+        option.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    const toggleOption = (option: string) => {
+        if (selectedValues.includes(option)) {
+            onChange(selectedValues.filter(val => val !== option));
+        } else {
+            onChange([...selectedValues, option]);
+        }
+    };
+
+    const removeOption = (option: string) => {
+        onChange(selectedValues.filter(val => val !== option));
+    };
+
+    return (
+        <div ref={dropdownRef} className={`relative ${className}`}>
+            <div
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900 cursor-pointer min-h-[48px] flex flex-wrap items-center gap-2"
+                onClick={() => setIsOpen(!isOpen)}
+            >
+                {selectedValues.length === 0 ? (
+                    <span className="text-gray-500">{placeholder}</span>
+                ) : (
+                    selectedValues.map((value) => (
+                        <span
+                            key={value}
+                            className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-sm flex items-center gap-1"
+                        >
+                            {value}
+                            <button
+                                type="button"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    removeOption(value);
+                                }}
+                                className="text-blue-600 hover:text-blue-800"
+                            >
+                                ×
+                            </button>
+                        </span>
+                    ))
+                )}
+                <div className="ml-auto">
+                    <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+                </div>
+            </div>
+
+            {isOpen && (
+                <div className="absolute z-50 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-hidden">
+                    <div className="p-2 border-b">
+                        <input
+                            type="text"
+                            placeholder="Search states..."
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                            className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            onClick={(e) => e.stopPropagation()}
+                        />
+                    </div>
+                    <div className="max-h-48 overflow-y-auto">
+                        {filteredOptions.map((option) => (
+                            <label
+                                key={option}
+                                className="flex items-center px-3 py-2 hover:bg-gray-100 cursor-pointer"
+                            >
+                                <input
+                                    type="checkbox"
+                                    checked={selectedValues.includes(option)}
+                                    onChange={() => toggleOption(option)}
+                                    className="mr-3 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                                />
+                                <span className="text-gray-900">{option}</span>
+                            </label>
+                        ))}
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+};
+
+// Nigerian States Array
+const nigerianStates = [
+    'Abia', 'Adamawa', 'Akwa Ibom', 'Anambra', 'Bauchi', 'Bayelsa',
+    'Benue', 'Borno', 'Cross River', 'Delta', 'Ebonyi', 'Edo',
+    'Ekiti', 'Enugu', 'FCT Abuja', 'Gombe', 'Imo', 'Jigawa',
+    'Kaduna', 'Kano', 'Katsina', 'Kebbi', 'Kogi', 'Kwara',
+    'Lagos', 'Nasarawa', 'Niger', 'Ogun', 'Ondo', 'Osun',
+    'Oyo', 'Plateau', 'Rivers', 'Sokoto', 'Taraba', 'Yobe', 'Zamfara'
+];
+
 export const SignupForm = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         phone: '',
         propertyStatus: '',
-        location: '',
-        propertyType: '',
+        locations: [] as string[],
         sessionType: '',
         preferredDate: '',
         preferredTime: '',
         reportFrequency: '',
         additionalQuestions: '',
         wantsDashboard: false,
-        wantsCourse: false
+        wantsCourse: false,
+        whatsappConsent: false
     });
 
     const [isVisible, setIsVisible] = useState(false);
@@ -1737,14 +1863,37 @@ export const SignupForm = () => {
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { name, value, type } = e.target;
-        setFormData({
-            ...formData,
-            [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
-        });
+        
+        if (name === 'locations') {
+            const target = e.target as HTMLInputElement;
+            const locationValue = target.value;
+            if (target.checked) {
+                setFormData({
+                    ...formData,
+                    locations: [...formData.locations, locationValue]
+                });
+            } else {
+                setFormData({
+                    ...formData,
+                    locations: formData.locations.filter(loc => loc !== locationValue)
+                });
+            }
+        } else {
+            setFormData({
+                ...formData,
+                [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
+            });
+        }
     };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        
+        // If virtual session selected, redirect to Calendly
+        if (formData.sessionType === 'virtual') {
+            window.open('https://calendly.com/your-calendly-link', '_blank');
+            return;
+        }
         
         try {
             const response = await fetch('/api/submit-form', {
@@ -1765,15 +1914,15 @@ export const SignupForm = () => {
                     email: '',
                     phone: '',
                     propertyStatus: '',
-                    location: '',
-                    propertyType: '',
+                    locations: [],
                     sessionType: '',
                     preferredDate: '',
                     preferredTime: '',
                     reportFrequency: '',
                     additionalQuestions: '',
                     wantsDashboard: false,
-                    wantsCourse: false
+                    wantsCourse: false,
+                    whatsappConsent: false
                 });
             } else {
                 alert(result.error || 'Something went wrong. Please try again.');
@@ -1787,25 +1936,37 @@ export const SignupForm = () => {
     return (
         <section
             ref={ref}
-            className={`py-20 px-6 bg-white transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'
+            className={`py-20 px-6 bg-gradient-to-br from-gray-900 to-black transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'
                 }`}
         >
             <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-6">
-                        Join Landlord Week
+                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
+                        Oga Landlord, this is your moment.
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Get personalized insights from property management experts and discover
-                        how much money you could be saving with professional management.
-                    </p>
+                    <div className="space-y-6 text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+                        <p className="font-medium">
+                            You can continue managing in the dark… hoping nothing bad happens.
+                        </p>
+                        <p className="font-medium">
+                            Or you can step into the light, take control, and finally enjoy the peace of mind you deserve.
+                        </p>
+                    </div>
+                    <div className="bg-red-900 bg-opacity-20 border border-red-500 rounded-2xl p-8 max-w-4xl mx-auto">
+                        <p className="text-2xl md:text-3xl text-red-400 font-bold mb-4">
+                            Don't be the landlord who discovers losses when it's too late.
+                        </p>
+                        <p className="text-xl text-gray-200">
+                            Be the landlord who saw the danger early — and acted.
+                        </p>
+                    </div>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-8">
                     {/* Basic Information */}
                     <div className="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                            <label className="block text-sm font-medium text-white mb-2">
                                 <User className="w-4 h-4 inline mr-2" />
                                 Full Name *
                             </label>
@@ -1815,13 +1976,13 @@ export const SignupForm = () => {
                                 value={formData.name}
                                 onChange={handleInputChange}
                                 required
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900"
                                 placeholder="Enter your full name"
                             />
                         </div>
 
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                            <label className="block text-sm font-medium text-white mb-2">
                                 <Mail className="w-4 h-4 inline mr-2" />
                                 Email Address *
                             </label>
@@ -1831,14 +1992,14 @@ export const SignupForm = () => {
                                 value={formData.email}
                                 onChange={handleInputChange}
                                 required
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900"
                                 placeholder="Enter your email"
                             />
                         </div>
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-white mb-2">
                             <Phone className="w-4 h-4 inline mr-2" />
                             Phone Number *
                         </label>
@@ -1848,14 +2009,14 @@ export const SignupForm = () => {
                             value={formData.phone}
                             onChange={handleInputChange}
                             required
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900"
                             placeholder="Enter your phone number"
                         />
                     </div>
 
                     {/* Property Information */}
                     <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-white mb-2">
                             <HomeIcon className="w-4 h-4 inline mr-2" />
                             Property Ownership Status *
                         </label>
@@ -1864,7 +2025,7 @@ export const SignupForm = () => {
                             value={formData.propertyStatus}
                             onChange={handleInputChange}
                             required
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900"
                         >
                             <option value="">Select your status</option>
                             <option value="current">I already own rental properties</option>
@@ -1873,50 +2034,27 @@ export const SignupForm = () => {
                         </select>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
-                                <MapPin className="w-4 h-4 inline mr-2" />
-                                Property Location
-                            </label>
-                            <input
-                                type="text"
-                                name="location"
-                                value={formData.location}
-                                onChange={handleInputChange}
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                                placeholder="City, State"
-                            />
-                        </div>
-
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
-                                Property Type
-                            </label>
-                            <select
-                                name="propertyType"
-                                value={formData.propertyType}
-                                onChange={handleInputChange}
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                            >
-                                <option value="">Select property type</option>
-                                <option value="single-family">Single Family Home</option>
-                                <option value="duplex">Duplex</option>
-                                <option value="multi-family">Multi-Family (3+ units)</option>
-                                <option value="condo">Condominium</option>
-                                <option value="townhouse">Townhouse</option>
-                                <option value="commercial">Commercial Property</option>
-                            </select>
-                        </div>
+                    {/* Property Location - Custom Multi-select */}
+                    <div>
+                        <label className="block text-sm font-medium text-white mb-2">
+                            <MapPin className="w-4 h-4 inline mr-2" />
+                            Property Location (Select all that apply) *
+                        </label>
+                        <MultiSelectDropdown
+                            options={nigerianStates}
+                            selectedValues={formData.locations}
+                            onChange={(values) => setFormData({ ...formData, locations: values })}
+                            placeholder="Select states where you have properties..."
+                        />
                     </div>
 
                     {/* Session Preferences */}
                     <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                            Session Preference *
+                        <label className="block text-sm font-medium text-white mb-2">
+                            Advisory Session Preference *
                         </label>
                         <div className="flex space-x-4">
-                            <label className="flex items-center">
+                            <label className="flex items-center text-white">
                                 <input
                                     type="radio"
                                     name="sessionType"
@@ -1925,9 +2063,9 @@ export const SignupForm = () => {
                                     onChange={handleInputChange}
                                     className="mr-2"
                                 />
-                                Virtual Session
+                                Virtual (Calendly)
                             </label>
-                            <label className="flex items-center">
+                            <label className="flex items-center text-white">
                                 <input
                                     type="radio"
                                     name="sessionType"
@@ -1936,14 +2074,21 @@ export const SignupForm = () => {
                                     onChange={handleInputChange}
                                     className="mr-2"
                                 />
-                                In-Person Meeting
+                                In-Person
                             </label>
                         </div>
+                        {formData.sessionType === 'virtual' && (
+                            <div className="mt-4 p-4 bg-blue-900 bg-opacity-20 border border-blue-500 rounded-lg">
+                                <p className="text-blue-200 text-sm">
+                                    <strong>Virtual sessions:</strong> You'll be redirected to Calendly to book your preferred time slot.
+                                </p>
+                            </div>
+                        )}
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
+                    {formData.sessionType === 'physical' && (
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                            <label className="block text-sm font-medium text-white mb-2">
                                 <Calendar className="w-4 h-4 inline mr-2" />
                                 Preferred Date
                             </label>
@@ -1952,55 +2097,44 @@ export const SignupForm = () => {
                                 name="preferredDate"
                                 value={formData.preferredDate}
                                 onChange={handleInputChange}
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900"
                             />
+                            <div className="mt-2">
+                                <label className="block text-sm font-medium text-white mb-2">
+                                    <Clock className="w-4 h-4 inline mr-2" />
+                                    Preferred Time
+                                </label>
+                                <div className="flex space-x-4">
+                                    <label className="flex items-center text-white">
+                                        <input
+                                            type="radio"
+                                            name="preferredTime"
+                                            value="morning"
+                                            checked={formData.preferredTime === 'morning'}
+                                            onChange={handleInputChange}
+                                            className="mr-2"
+                                        />
+                                        Morning
+                                    </label>
+                                    <label className="flex items-center text-white">
+                                        <input
+                                            type="radio"
+                                            name="preferredTime"
+                                            value="afternoon"
+                                            checked={formData.preferredTime === 'afternoon'}
+                                            onChange={handleInputChange}
+                                            className="mr-2"
+                                        />
+                                        Afternoon
+                                    </label>
+                                </div>
+                            </div>
                         </div>
-
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
-                                <Clock className="w-4 h-4 inline mr-2" />
-                                Preferred Time
-                            </label>
-                            <select
-                                name="preferredTime"
-                                value={formData.preferredTime}
-                                onChange={handleInputChange}
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                            >
-                                <option value="">Select time slot</option>
-                                <option value="9am-11am">9:00 AM - 11:00 AM</option>
-                                <option value="11am-1pm">11:00 AM - 1:00 PM</option>
-                                <option value="1pm-3pm">1:00 PM - 3:00 PM</option>
-                                <option value="3pm-5pm">3:00 PM - 5:00 PM</option>
-                                <option value="5pm-7pm">5:00 PM - 7:00 PM</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    {/* Property Management Reports */}
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                            <BarChart3 className="w-4 h-4 inline mr-2" />
-                            Current Property Management Reports
-                        </label>
-                        <select
-                            name="reportFrequency"
-                            value={formData.reportFrequency}
-                            onChange={handleInputChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        >
-                            <option value="">How often do you receive reports?</option>
-                            <option value="never">I don't receive any reports</option>
-                            <option value="monthly">Monthly reports</option>
-                            <option value="quarterly">Quarterly reports</option>
-                            <option value="annual">Annual reports only</option>
-                            <option value="self-managed">I self-manage my properties</option>
-                        </select>
-                    </div>
+                    )}
 
                     {/* Interest Checkboxes */}
-                    <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
-                        <h3 className="text-lg font-semibold text-gray-800 mb-4">What interests you most?</h3>
+                    <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20">
+                        <h3 className="text-lg font-semibold text-white mb-4">👉 Tick the boxes for your Dashboard and Finance Course</h3>
                         
                         <div className="space-y-4">
                             <label className="flex items-start space-x-3 cursor-pointer">
@@ -2012,8 +2146,8 @@ export const SignupForm = () => {
                                     className="mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                                 />
                                 <div>
-                                    <p className="font-medium text-gray-800">I want this dashboard for all my properties</p>
-                                    <p className="text-sm text-gray-600 mt-1">
+                                    <p className="font-medium text-white">I want this dashboard for all my properties</p>
+                                    <p className="text-sm text-gray-300 mt-1">
                                         If you're not getting this, you might be in trouble. This dashboard helps you monitor the state of your properties in near real-time.
                                     </p>
                                 </div>
@@ -2028,37 +2162,44 @@ export const SignupForm = () => {
                                     className="mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                                 />
                                 <div>
-                                    <p className="font-medium text-gray-800">Sign me up for the Landlord Finance Course</p>
-                                    <p className="text-sm text-gray-600 mt-1">
+                                    <p className="font-medium text-white">Sign me up for the Landlord Finance Course</p>
+                                    <p className="text-sm text-gray-300 mt-1">
                                         Master the financial strategies that separate successful landlords from the rest. FREE during Landlord Week.
+                                    </p>
+                                </div>
+                            </label>
+
+                            <label className="flex items-start space-x-3 cursor-pointer">
+                                <input
+                                    type="checkbox"
+                                    name="whatsappConsent"
+                                    checked={formData.whatsappConsent}
+                                    onChange={handleInputChange}
+                                    className="mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                                />
+                                <div>
+                                    <p className="font-medium text-white">Consent for WhatsApp updates</p>
+                                    <p className="text-sm text-gray-300 mt-1">
+                                        I consent to receive important updates and notifications via WhatsApp.
                                     </p>
                                 </div>
                             </label>
                         </div>
                     </div>
 
-                    {/* Additional Questions */}
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                            Additional Questions or Comments
-                        </label>
-                        <textarea
-                            name="additionalQuestions"
-                            value={formData.additionalQuestions}
-                            onChange={handleInputChange}
-                            rows={4}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                            placeholder="Tell us about any specific challenges you're facing or questions you'd like addressed during the session..."
-                        />
+                    {/* Final CTA */}
+                    <div className="text-center">
+                        <p className="text-xl text-white mb-6">
+                            👉 And take back control of your wealth.
+                        </p>
+                        
+                        <button
+                            type="submit"
+                            className="bg-gradient-to-r from-red-500 to-orange-500 text-white py-4 px-8 rounded-lg font-bold text-xl hover:from-red-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl"
+                        >
+                            "Secure Your Spot Now →"
+                        </button>
                     </div>
-
-                    <button
-                        type="submit"
-                        className="w-full bg-blue-600 text-white py-4 px-8 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors flex items-center justify-center"
-                    >
-                        Reserve My Spot in Landlord Week
-                        <ArrowRight className="w-5 h-5 ml-2" />
-                    </button>
                 </form>
             </div>
         </section>
