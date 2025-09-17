@@ -426,17 +426,15 @@ export default function Home() {
                     <div className="bg-white p-3 rounded border">
                       <h5 className="font-medium text-gray-800 text-xs mb-2">VACANCY STATUS</h5>
                       <div className="space-y-1 text-xs text-gray-600">
-                        <p>• 3 apartments vacant 90+ days</p>
-                        <p>• Lost: ₦2.1m (₦22,100 daily)</p>
+                        <p>• 3 apartments vacant 90+ days - Lost: ₦2.1m</p>
                       </div>
                     </div>
 
                     <div className="bg-white p-3 rounded border">
                       <h5 className="font-medium text-gray-800 text-xs mb-2">MAINTENANCE EFFICIENCY</h5>
                       <div className="space-y-1 text-xs text-gray-600">
-                        <p>• Spending 23% of income on maintenance</p>
-                        <p>• 80% of expenses are plumbing-related</p>
-                        <p>• ₦1.2m above industry average</p>
+                        <p>• Spending 23% of income on maintenance - 80% of expenses are plumbing-related</p>
+                        <p>• ₦1.2m above industry average spent</p>
                       </div>
                     </div>
                   </div>
@@ -456,8 +454,8 @@ export default function Home() {
                     <div className="space-y-1 text-xs text-gray-600">
                       <p>• New Court: Leaking pipe 45+ days → escalating costs</p>
                       <p>• Block C: Wall cracks → collapse risk in 18 months</p>
-                      <p>• Lekki: Government demolition threat</p>
-                      <p className="text-red-600 font-semibold">Last inspection: 18 months ago</p>
+                      <p>• Lekki: Government demolition threat - Please pay attention</p>
+                      <h6 className="text-red-600 font-semibold text-xs mb-1">Last inspection: 18 months ago</h6>
                       <p>• Risk: 3 years rent on renovation when tenants move</p>
                     </div>
                   </div>
@@ -465,8 +463,7 @@ export default function Home() {
                   <div className="bg-white p-3 rounded border">
                     <h5 className="font-medium text-gray-800 text-xs mb-2">POTENTIAL INCOME LOSS RISK</h5>
                     <div className="space-y-1 text-xs text-gray-600">
-                      <p>• 2 tenants (8 months) no renewal reminders</p>
-                      <p>• Risk: ₦3.6m loss if they don't renew</p>
+                      <p>• 2 tenants (8 months) no renewal reminders - Risk: ₦3.6m loss if they don't renew</p>
                       <p>• 3 units: No rent review in 4 years</p>
                     </div>
                   </div>
