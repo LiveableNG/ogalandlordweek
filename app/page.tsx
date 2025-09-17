@@ -373,7 +373,7 @@ export default function Home() {
                 <div className="bg-green-50 p-4 rounded-lg border border-green-200">
                   <h4 className="font-semibold mb-4 text-green-800 text-sm flex items-center">
                     <CheckCircle className="w-4 h-4 mr-2" />
-                    PERFORMING/HEALTHY
+                    WHAT'S WORKING
                   </h4>
                   
                   <div className="space-y-4">
@@ -409,7 +409,7 @@ export default function Home() {
                 <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
                   <h4 className="font-semibold mb-4 text-yellow-800 text-sm flex items-center">
                     <AlertTriangle className="w-4 h-4 mr-2" />
-                    UNDERPERFORMING/AT RISK
+                    WHAT'S NOT WORKING
                   </h4>
                   
                   <div className="space-y-4">
