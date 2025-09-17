@@ -50,21 +50,59 @@ const HeroSection = () => {
       <div className={`text-center px-6 z-10 max-w-5xl transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
 
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
-          Oga Landlord… are you really the 'Oga'?
+          Oga Landlord… 
           <br />
-          <span className="text-red-500">Or is your money quietly burning while you smile?</span>
+          Your property dey shine outside — but inside, your money may be burning quietly.
         </h1>
 
         <p className="text-xl md:text-2xl text-gray-300 mb-12 font-light max-w-4xl mx-auto">
-          Every month in Nigeria, landlords like you are losing money they will never recover.
+          Every year in Nigeria, landlords like you are losing money they will never recover. Some don't realize how much damage tenants are quietly causing until it's too late.
           <br />
-          Some don't even know how much their tenants are owing until the debts pile up.
+          <span className="text-red-400 font-medium">Others only see the true cost when a tenant is about to move out — losses and repairs that swallow years of rent in one bite.</span>
         </p>
 
         <div className="animate-bounce">
           <ChevronDown className="w-8 h-8 text-white mx-auto" />
         </div>
       </div>
+    </section>
+  );
+};
+
+const ParallaxSection = () => {
+  return (
+    <section className="relative h-screen overflow-hidden">
+      {/* Fixed background image */}
+       <div 
+         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+         style={{
+           backgroundImage: 'url(/page-2.1.png)',
+           backgroundAttachment: 'fixed',
+           backgroundPosition: 'center',
+           backgroundSize: 'cover'
+         }}
+       />
+       
+       {/* Text overlay */}
+       <div className="absolute inset-0 flex items-center justify-center z-10">
+         <div className="bg-black bg-opacity-80 rounded-lg p-8 text-center max-w-4xl mx-6">
+           <h2 className="text-4xl md:text-6xl font-bold text-white mb-2">
+             Oga Landlord
+           </h2>
+           <p className="text-lg md:text-xl text-white mb-4 font-mono">
+             /Ogaˈlænd.lɔːd/
+           </p>
+           <p className="text-sm md:text-base text-white mb-6">
+             noun
+           </p>
+           <p className="text-base md:text-lg text-white mb-6 leading-relaxed max-w-3xl mx-auto">
+             A young (and getting younger every year) male, female who has inherited or invests in property (or is intending to) with clarity, knows the nitti-gritties of how to get great ROI like a good businessman should, and understands that capital appreciation is as important as rent. Usually making money with peace of mind, not shouting and fighting everyday. Does not regret building houses or inheriting them.
+           </p>
+           <p className="text-sm md:text-base text-blue-300">
+             Similar: Fun, helping tenants become productive, healthy, legacy-conscious
+           </p>
+         </div>
+       </div>
     </section>
   );
 };
@@ -202,6 +240,7 @@ export default function Home() {
   return (
     <div className="font-sans">
       <HeroSection />
+      <ParallaxSection />
 
       {/* Section 1: Portfolio */}
       <section className="py-20 px-6 bg-gray-50">

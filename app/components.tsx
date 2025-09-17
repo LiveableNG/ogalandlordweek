@@ -1726,10 +1726,45 @@ export const SignupForm = () => {
         });
     };
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        alert('Thank you for signing up for Landlord Week! We\'ll be in touch soon.');
+        
+        try {
+            const response = await fetch('/api/submit-form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                alert('Thank you for signing up for Landlord Week! We\'ll be in touch soon.');
+                // Reset form
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    propertyStatus: '',
+                    location: '',
+                    propertyType: '',
+                    sessionType: '',
+                    preferredDate: '',
+                    preferredTime: '',
+                    reportFrequency: '',
+                    additionalQuestions: '',
+                    wantsDashboard: false,
+                    wantsCourse: false
+                });
+            } else {
+                alert(result.error || 'Something went wrong. Please try again.');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            alert('Something went wrong. Please try again.');
+        }
     };
 
     return (
