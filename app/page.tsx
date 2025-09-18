@@ -111,7 +111,7 @@ const ProblemStorySection = () => {
             <div className="space-y-6 text-lg md:text-2xl text-red-400 font-bold">
               <p>The truth? Most landlords can't.</p>
               <p>And that is how money burns away quietly.</p>
-              <p>that is how generational wealth disappears.</p>
+              <p>That is how generational wealth disappears.</p>
             </div>
 
             <div className="space-y-6 text-lg md:text-2xl text-yellow-400 font-medium">
