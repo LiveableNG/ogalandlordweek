@@ -5,6 +5,12 @@ frontend:
       commands:
         - nvm use 20
         - node --version
+        - echo "Injecting secrets"
+        - echo "MYSQL_HOST=$MYSQL_HOST" >> .env.production
+        - echo "MYSQL_USER=$MYSQL_USER" >> .env.production
+        - echo "MYSQL_PASSWORD=$MYSQL_PASSWORD" >> .env.production
+        - echo "MYSQL_DATABASE=$MYSQL_DATABASE" >> .env.production
+        - echo "MYSQL_PORT=$MYSQL_PORT" >> .env.production
         - npm ci
     build:
       commands:
@@ -17,8 +23,3 @@ frontend:
     paths:
       - node_modules/**/*
       - .next/cache/**/*
-backend:
-  phases:
-    build:
-      commands:
-        - echo "Backend build phase"
