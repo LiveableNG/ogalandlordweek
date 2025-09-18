@@ -1916,8 +1916,9 @@ export const SignupForm = () => {
                 const result = await response.json();
 
                 if (response.ok) {
-                    // Form saved successfully, now redirect to Calendly
-                    window.open('https://calendly.com/goodtenantsvisits/new-meeting', '_blank');
+                    // Form saved successfully, now redirect to Calendly with pre-filled data
+                    const calendlyUrl = `https://calendly.com/goodtenantsvisits/new-meeting?name=${encodeURIComponent(formData.name)}&email=${encodeURIComponent(formData.email)}`;
+                    window.open(calendlyUrl, '_blank');
                     setIsSuccess(true);
                     // Reset form
                     setFormData({
