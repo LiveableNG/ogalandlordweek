@@ -1802,7 +1802,7 @@ const MultiSelectDropdown = ({
                                     type="checkbox"
                                     checked={selectedValues.includes(option)}
                                     onChange={() => toggleOption(option)}
-                                    className="mr-3 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                                    className="mr-3 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                                 />
                                 <span className="text-gray-900">{option}</span>
                             </label>
@@ -1895,10 +1895,55 @@ export const SignupForm = () => {
         e.preventDefault();
         setIsSubmitting(true);
         
-        // If virtual session selected, redirect to Calendly
-        if (formData.sessionType === 'virtual') {
-            window.open('https://calendly.com/your-calendly-link', '_blank');
+        // Validate required fields for in-person sessions
+        if (formData.sessionType === 'physical' && !formData.preferredDate) {
+            alert('Preferred date is required for in-person sessions.');
             setIsSubmitting(false);
+            return;
+        }
+        
+        // If virtual session selected, save form data first, then redirect to Calendly
+        if (formData.sessionType === 'virtual') {
+            try {
+                const response = await fetch('/api/submit-form', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    // Form saved successfully, now redirect to Calendly
+                    window.open('https://calendly.com/goodtenantsvisits/new-meeting', '_blank');
+                    setIsSuccess(true);
+                    // Reset form
+                    setFormData({
+                        name: '',
+                        email: '',
+                        phone: '',
+                        propertyStatus: '',
+                        locations: [],
+                        sessionType: '',
+                        preferredDate: '',
+                        preferredTime: '',
+                        reportFrequency: '',
+                        additionalQuestions: '',
+                        wantsDashboard: false,
+                        wantsCourse: false,
+                        whatsappConsent: false
+                    });
+                } else {
+                    alert(result.error || 'Something went wrong. Please try again.');
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                alert('Something went wrong. Please try again.');
+            } finally {
+                setIsSubmitting(false);
+            }
             return;
         }
         
@@ -2060,40 +2105,42 @@ export const SignupForm = () => {
                         </div>
                     </div>
 
-                    <div>
-                        <label className="block text-sm font-medium text-white mb-2">
-                            <Phone className="w-4 h-4 inline mr-2" />
-                            Phone Number *
-                        </label>
-                        <input
-                            type="tel"
-                            name="phone"
-                            value={formData.phone}
-                            onChange={handleInputChange}
-                            required
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900"
-                            placeholder="Enter your phone number"
-                        />
-                    </div>
+                    {/* Phone Number and Property Status - Same Row */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label className="block text-sm font-medium text-white mb-2">
+                                <Phone className="w-4 h-4 inline mr-2" />
+                                Phone Number *
+                            </label>
+                            <input
+                                type="tel"
+                                name="phone"
+                                value={formData.phone}
+                                onChange={handleInputChange}
+                                required
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900"
+                                placeholder="Enter your phone number"
+                            />
+                        </div>
 
-                    {/* Property Information */}
-                    <div>
-                        <label className="block text-sm font-medium text-white mb-2">
-                            <HomeIcon className="w-4 h-4 inline mr-2" />
-                            Property Ownership Status *
-                        </label>
-                        <select
-                            name="propertyStatus"
-                            value={formData.propertyStatus}
-                            onChange={handleInputChange}
-                            required
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900"
-                        >
-                            <option value="">Select your status</option>
-                            <option value="current">I already own rental properties</option>
-                            <option value="soon">I'm about to become a landlord</option>
-                            <option value="considering">I'm considering real estate investment</option>
-                        </select>
+                        <div>
+                            <label className="block text-sm font-medium text-white mb-2">
+                                <HomeIcon className="w-4 h-4 inline mr-2" />
+                                Property Ownership Status *
+                            </label>
+                            <select
+                                name="propertyStatus"
+                                value={formData.propertyStatus}
+                                onChange={handleInputChange}
+                                required
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900"
+                            >
+                                <option value="">Select your status</option>
+                                <option value="current">I already own rental properties</option>
+                                <option value="soon">I'm about to become a landlord</option>
+                                <option value="considering">I'm considering real estate investment</option>
+                            </select>
+                        </div>
                     </div>
 
                     {/* Property Location - Custom Multi-select */}
@@ -2123,7 +2170,7 @@ export const SignupForm = () => {
                                     value="virtual"
                                     checked={formData.sessionType === 'virtual'}
                                     onChange={handleInputChange}
-                                    className="mr-2"
+                                    className="mr-2 w-5 h-5"
                                 />
                                 Virtual (Calendly)
                             </label>
@@ -2134,7 +2181,7 @@ export const SignupForm = () => {
                                     value="physical"
                                     checked={formData.sessionType === 'physical'}
                                     onChange={handleInputChange}
-                                    className="mr-2"
+                                    className="mr-2 w-5 h-5"
                                 />
                                 In-Person
                             </label>
@@ -2149,24 +2196,29 @@ export const SignupForm = () => {
                     </div>
 
                     {formData.sessionType === 'physical' && (
-                        <div>
-                            <label className="block text-sm font-medium text-white mb-2">
-                                <Calendar className="w-4 h-4 inline mr-2" />
-                                Preferred Date
-                            </label>
-                            <input
-                                type="date"
-                                name="preferredDate"
-                                value={formData.preferredDate}
-                                onChange={handleInputChange}
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900"
-                            />
-                            <div className="mt-2">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label className="block text-sm font-medium text-white mb-2">
+                                    <Calendar className="w-4 h-4 inline mr-2" />
+                                    Preferred Date
+                                    {formData.sessionType === 'physical' && <span className="text-red-400 ml-1">*</span>}
+                                </label>
+                                <input
+                                    type="date"
+                                    name="preferredDate"
+                                    value={formData.preferredDate}
+                                    onChange={handleInputChange}
+                                    required={formData.sessionType === 'physical'}
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900"
+                                />
+                            </div>
+                            
+                            <div>
                                 <label className="block text-sm font-medium text-white mb-2">
                                     <Clock className="w-4 h-4 inline mr-2" />
                                     Preferred Time
                                 </label>
-                                <div className="flex space-x-4">
+                                <div className="flex space-x-4 items-center h-12">
                                     <label className="flex items-center text-white">
                                         <input
                                             type="radio"
@@ -2174,7 +2226,7 @@ export const SignupForm = () => {
                                             value="morning"
                                             checked={formData.preferredTime === 'morning'}
                                             onChange={handleInputChange}
-                                            className="mr-2"
+                                            className="mr-2 w-5 h-5"
                                         />
                                         Morning
                                     </label>
@@ -2185,7 +2237,7 @@ export const SignupForm = () => {
                                             value="afternoon"
                                             checked={formData.preferredTime === 'afternoon'}
                                             onChange={handleInputChange}
-                                            className="mr-2"
+                                            className="mr-2 w-5 h-5"
                                         />
                                         Afternoon
                                     </label>
