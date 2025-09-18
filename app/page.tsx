@@ -32,13 +32,13 @@ const HeroSection = () => {
     <section className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden">
       <div className={`text-center px-6 z-10 max-w-5xl transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
 
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
+        <h1 className="text-3xl md:text-7xl font-bold text-white mb-8 leading-tight">
           Oga Landlord…
           <br />
           Your property dey shine outside — but inside, your money may be burning quietly.
         </h1>
 
-        <p className="text-xl md:text-2xl text-gray-300 mb-12 font-light max-w-4xl mx-auto">
+        <p className="text-lg md:text-2xl text-gray-300 mb-12 font-light max-w-4xl mx-auto">
           Every year in Nigeria, landlords like you are losing money they will never recover. Some don't realize how much damage tenants are quietly causing until it's too late.
           <br />
           <span className="text-red-400 font-medium">Others only see the true cost when a tenant is about to move out — losses and repairs that swallow years of rent in one bite.</span>
@@ -55,37 +55,16 @@ const HeroSection = () => {
 const ParallaxSection = () => {
   return (
     <section className="relative h-screen overflow-hidden">
-      {/* Fixed background image */}
-       <div
-         className="absolute inset-0 w-full h-full bg-contain bg-center bg-no-repeat"
-         style={{
-           backgroundImage: 'url(/page-2.png)',
-           backgroundPosition: 'center',
-           backgroundSize: 'contain',
-           backgroundRepeat: 'no-repeat'
-         }}
-       />
-
-      {/* Text overlay */}
-      {/* <div className="absolute inset-0 flex items-center justify-center z-10">
-        <div className="bg-black bg-opacity-80 rounded-lg p-8 text-center max-w-4xl mx-6">
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-2">
-            Oga Landlord
-          </h2>
-          <p className="text-lg md:text-xl text-white mb-4 font-mono">
-            /Ogaˈlænd.lɔːd/
-          </p>
-          <p className="text-sm md:text-base text-white mb-6">
-            noun
-          </p>
-          <p className="text-base md:text-lg text-white mb-6 leading-relaxed max-w-3xl mx-auto">
-            A young (and getting younger every year) male, female who has inherited or invests in property (or is intending to) with clarity, knows the nitti-gritties of how to get great ROI like a good businessman should, and understands that capital appreciation is as important as rent. Usually making money with peace of mind, not shouting and fighting everyday. Does not regret building houses or inheriting them.
-          </p>
-          <p className="text-sm md:text-base text-blue-300">
-            Similar: Fun, helping tenants become productive, healthy, legacy-conscious
-          </p>
-        </div>
-      </div> */}
+      {/* Static background image */}
+      <div
+        className="w-full h-full bg-contain bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/page-2.png)',
+          backgroundPosition: 'center',
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat'
+        }}
+      />
     </section>
   );
 };
@@ -113,30 +92,30 @@ const ProblemStorySection = () => {
       <div className="relative z-10 h-full flex items-center justify-center">
         <div className="text-center px-6 max-w-5xl">
           <div className="space-y-8">
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
+            <h2 className="text-2xl md:text-6xl font-bold text-white mb-8">
               The Hard Questions
             </h2>
 
-            <div className="space-y-6 text-xl md:text-2xl text-white">
+            <div className="space-y-6 text-lg md:text-2xl text-white">
               <p className="font-medium">
-                ❓ Do you know, right now, which of your tenants has paid rent — and who is still owing?
+                Do you know, right now, which of your tenants has paid rent — and who is still owing?
               </p>
               <p className="font-medium">
-                ❓ Do you know how much you've spent on maintenance in the last 6 months — and whether it's eating into your profit?
+                Do you know how much you've spent on maintenance in the last 6 months — and whether it's eating into your profit?
               </p>
               <p className="font-medium">
-                ❓ Can you prove, with real numbers, whether your property is making you money… or quietly draining it?
+                Can you prove, with real numbers, whether your property is making you money… or quietly draining it?
               </p>
             </div>
 
-            <div className="space-y-6 text-xl md:text-2xl text-red-400 font-bold">
+            <div className="space-y-6 text-lg md:text-2xl text-red-400 font-bold">
               <p>The truth? Most landlords can't.</p>
               <p>And that is how money burns away quietly.</p>
-              <p>And that is how generational wealth disappears.</p>
+              <p>that is how generational wealth disappears.</p>
             </div>
 
-            <div className="space-y-6 text-xl md:text-2xl text-yellow-400 font-medium">
-              <p>And if you're looking to own your first property:</p>
+            <div className="space-y-6 text-lg md:text-2xl text-yellow-400 font-medium">
+              <p>And if you're looking to own your first property,</p>
               <p>Do you know the visibility and control you'll need to avoid falling into the same trap?</p>
               <p className="text-red-400 font-bold">
                 Or will you just let life — and tenants — run the show instead of you?
@@ -149,138 +128,9 @@ const ProblemStorySection = () => {
   );
 };
 
-const PortfolioDashboard = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => setIsVisible(true), 200);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      className={`bg-white rounded-2xl shadow-2xl p-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}
-    >
-      <h3 className="text-2xl font-semibold text-gray-800 mb-6">Portfolio Overview Dashboard</h3>
-
-      <div className="space-y-6">
-        {/* Key Metrics */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-          <div className="bg-red-50 p-3 rounded-lg border border-red-200">
-            <div className="flex items-center space-x-2 mb-1">
-              <AlertTriangle className="w-4 h-4 text-red-600" />
-              <p className="text-xs text-gray-600">Default Rate</p>
-            </div>
-            <p className="text-lg font-bold text-red-600">12%</p>
-            <p className="text-xs text-gray-500">3 chronic defaulters</p>
-          </div>
-
-          <div className="bg-orange-50 p-3 rounded-lg border border-orange-200">
-            <div className="flex items-center space-x-2 mb-1">
-              <Clock className="w-4 h-4 text-orange-600" />
-              <p className="text-xs text-gray-600">Payment Delay</p>
-            </div>
-            <p className="text-lg font-bold text-orange-600">14 days</p>
-            <p className="text-xs text-gray-500">Average delay</p>
-          </div>
-
-          <div className="bg-purple-50 p-3 rounded-lg border border-purple-200">
-            <div className="flex items-center space-x-2 mb-1">
-              <Users className="w-4 h-4 text-purple-600" />
-              <p className="text-xs text-gray-600">Concentration Risk</p>
-            </div>
-            <p className="text-lg font-bold text-purple-600">45%</p>
-            <p className="text-xs text-gray-500">Income on 3 tenants</p>
-          </div>
-
-          <div className="bg-blue-50 p-3 rounded-lg border border-blue-200">
-            <div className="flex items-center space-x-2 mb-1">
-              <HomeIcon className="w-4 h-4 text-blue-600" />
-              <p className="text-xs text-gray-600">Vacancy Rate</p>
-            </div>
-            <p className="text-lg font-bold text-blue-600">9.5%</p>
-            <p className="text-xs text-gray-500">4 vacant units</p>
-          </div>
-        </div>
-
-        {/* Risk Analysis */}
-        <div className="grid lg:grid-cols-2 gap-4">
-          <div className="bg-red-50 p-4 rounded-lg border border-red-200">
-            <h4 className="font-semibold mb-3 text-red-800 text-sm">Critical Issues</h4>
-            <div className="space-y-2">
-              <div className="bg-white p-3 rounded border text-sm">
-                <div className="flex justify-between items-center mb-1">
-                  <h5 className="font-medium text-gray-800 text-xs">Chronic Defaulters</h5>
-                  <span className="text-xs text-red-600 font-bold">3 tenants</span>
-                </div>
-                <p className="text-xs text-gray-600">Risk: ₦4.2M annually if no action taken</p>
-              </div>
-              <div className="bg-white p-3 rounded border text-sm">
-                <div className="flex justify-between items-center mb-1">
-                  <h5 className="font-medium text-gray-800 text-xs">Cash Flow Crisis</h5>
-                  <span className="text-xs text-orange-600 font-bold">14 days delay</span>
-                </div>
-                <p className="text-xs text-gray-600">Funding expenses from savings instead of rent</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
-            <h4 className="font-semibold mb-3 text-yellow-800 text-sm">Concentration Risk</h4>
-            <div className="space-y-2">
-              <div className="bg-white p-3 rounded border text-sm">
-                <div className="flex justify-between items-center mb-1">
-                  <h5 className="font-medium text-gray-800 text-xs">High Dependency</h5>
-                  <span className="text-xs text-purple-600 font-bold">45%</span>
-                </div>
-                <p className="text-xs text-gray-600">Income depends on just 3 tenants</p>
-              </div>
-              <div className="bg-white p-3 rounded border text-sm">
-                <div className="flex justify-between items-center mb-1">
-                  <h5 className="font-medium text-gray-800 text-xs">Portfolio Risk</h5>
-                  <span className="text-xs text-red-600 font-bold">High</span>
-                </div>
-                <p className="text-xs text-gray-600">If they exit, portfolio income halves overnight</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Action Required */}
-        <div className="bg-red-100 border border-red-300 rounded-lg p-4">
-          <div className="flex items-start space-x-3">
-            <AlertTriangle className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
-            <div>
-              <h4 className="font-semibold text-red-800 text-sm mb-1">Immediate Action Required</h4>
-              <p className="text-sm text-red-700">
-                <strong>Suggestion:</strong> "Advise your PM to exit these tenants immediately."
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 export default function Home() {
   return (
-    <div className="font-sans">
+    <div>
       <HeroSection />
       <ParallaxSection />
       <ProblemStorySection />
@@ -289,17 +139,17 @@ export default function Home() {
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
+            <h2 className="text-2xl md:text-6xl font-bold text-gray-800 mb-6">
               Do you have full visibility of your portfolio in real time?
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">
               This is what our Landlord Dashboard gives you. Without it, you are at serious risk. With it, you finally become the true Oga.
             </p>
           </div>
 
           {/* Dashboard Container */}
           <div className="bg-white rounded-2xl shadow-2xl p-8">
-            <h3 className="text-2xl font-semibold text-gray-800 mb-6">Landlord Portfolio Dashboard</h3>
+            <h3 className="text-lg md:text-2xl font-semibold text-gray-800 mb-6">Landlord Portfolio Dashboard</h3>
 
             <div className="space-y-6">
               {/* Key Metrics Row */}
@@ -309,7 +159,7 @@ export default function Home() {
                     <HomeIcon className="w-5 h-5 text-blue-600" />
                     <p className="text-sm text-gray-600 font-medium">Units</p>
                   </div>
-                  <p className="text-2xl font-bold text-blue-600">42</p>
+                  <p className="text-lg md:text-2xl font-bold text-blue-600">42</p>
                   <div className="mt-1 text-xs text-gray-500">
                     <div className="flex justify-between items-center">
                       <span>8 Abuja, 30 Lagos, 4 Oyo</span>
@@ -324,7 +174,7 @@ export default function Home() {
                     <Users className="w-5 h-5 text-green-600" />
                     <p className="text-sm text-gray-600 font-medium">Tenants</p>
                   </div>
-                  <p className="text-2xl font-bold text-green-600">38</p>
+                  <p className="text-lg md:text-2xl font-bold text-green-600">38</p>
                   <p className="text-xs text-red-600 font-semibold">Default Rate: 12%</p>
                 </div>
 
@@ -333,7 +183,7 @@ export default function Home() {
                     <DollarSign className="w-5 h-5 text-purple-600" />
                     <p className="text-sm text-gray-600 font-medium">Total Value</p>
                   </div>
-                  <p className="text-2xl font-bold text-purple-600">₦59m</p>
+                  <p className="text-lg md:text-2xl font-bold text-purple-600">₦59m</p>
                   <p className="text-xs text-gray-500">Annual</p>
                 </div>
 
@@ -358,7 +208,7 @@ export default function Home() {
                     <CheckCircle className="w-4 h-4 mr-2" />
                     WHAT'S WORKING
                   </h4>
-                  
+
                   <div className="space-y-4">
                     <div className="bg-white p-3 rounded border">
                       <h5 className="font-medium text-gray-800 text-xs mb-2">INCOME MANAGEMENT SUCCESS</h5>
@@ -394,14 +244,14 @@ export default function Home() {
                     <AlertTriangle className="w-4 h-4 mr-2" />
                     WHAT'S NOT WORKING
                   </h4>
-                  
+
                   <div className="space-y-4">
                     <div className="bg-white p-3 rounded border">
                       <h5 className="font-medium text-gray-800 text-xs mb-2">INCOME HEALTH</h5>
                       <div className="space-y-1 text-xs text-gray-600">
                         <p>• Deola Badmus: 2 late payments, credit rating drop → ₦1.8m risk</p>
                         <p className="text-red-600 font-semibold">Action: Exit this tenant</p>
-                        <p>• Flat A1 Orchid: ₦1.3m below market rate</p>
+                        <p>• Flat A1 Orchid: ₦1.3m below market rate - Find out why</p>
                         <p className="text-blue-600 font-semibold">Tip: Upgrade fittings for higher rent</p>
                       </div>
                     </div>
@@ -430,7 +280,7 @@ export default function Home() {
                   <XCircle className="w-4 h-4 mr-2" />
                   WHAT'S CRITICAL
                 </h4>
-                
+
                 <div className="grid lg:grid-cols-2 gap-4">
                   <div className="bg-white p-3 rounded border">
                     <h5 className="font-medium text-gray-800 text-xs mb-2">PROPERTY DAMAGE RISK</h5>
@@ -444,7 +294,7 @@ export default function Home() {
                   <div className="bg-white p-3 rounded border">
                     <h5 className="font-medium text-gray-800 text-xs mb-2">Last inspection: 18 months ago</h5>
                     <div className="space-y-1 text-xs text-gray-600">
-                      <p>• Risk: 3 years rent on renovation when tenants move</p>
+                      <p>• Risk: 3 years rent on renovation when tenants move, considering inflation</p>
                     </div>
                   </div>
 
@@ -462,7 +312,7 @@ export default function Home() {
               <div className="bg-red-100 border border-red-300 rounded-lg p-4">
                 <div className="flex items-start space-x-3">
                   <AlertTriangle className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
-                <div>
+                  <div>
                     <h4 className="font-semibold text-red-800 text-sm mb-1">Immediate Action Required</h4>
                     <p className="text-sm text-red-700">
                       <strong>Because every day you spend without this dashboard, money could already be slipping through your hands.</strong>
@@ -479,10 +329,10 @@ export default function Home() {
       <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
+            <h2 className="text-2xl md:text-6xl font-bold text-gray-800 mb-6">
               About to become a landlord or looking to expand your portfolio?
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">
               You might be missing information required to make decisions:
             </p>
           </div>
@@ -499,7 +349,7 @@ export default function Home() {
                     <ul className="space-y-2 text-sm">
                       <li>• Converting 1 vacant unit could earn ₦2m more yearly</li>
                       <li>• Converting a block of duplexes into small units could double your annual income</li>
-                      <li>• Buy with clarity, not the wrong property — Consider geographic diversification</li>
+                      <li>• Buy with clarity, not the wrong property</li>
                     </ul>
                   </div>
                 </div>
@@ -513,7 +363,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-bold text-blue-800 mb-3">Market Analysis</h3>
                   <div className="space-y-3 text-gray-700">
-                    <p className="font-semibold text-base">Your properties appreciated 22% but you're under-pricing rent</p>
+                    <p className="font-semibold text-base">Your properties appreciated but you're under-pricing rent</p>
                     <ul className="space-y-2 text-sm">
                       <li>• 100% concentration in Lagos - market downturn risk</li>
                       <li>• Without updated valuation, missing sales potential</li>
@@ -549,10 +399,10 @@ export default function Home() {
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
+            <h2 className="text-2xl md:text-6xl font-bold text-gray-800 mb-6">
               Supercharging your assets
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">
               Because real Oga Landlords have this transparency, they have clarity on their income, can make better decisions, and also access services such as:
             </p>
           </div>
@@ -562,19 +412,19 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <DollarSign className="w-8 h-8 text-green-600" />
-                  </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Upfront Rent</h3>
+              </div>
+              <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-4">Upfront Rent</h3>
               <p className="text-gray-600 leading-relaxed">
                 Get your rent payments in advance to improve cash flow and reduce collection risks. Access your rental income when you need it most.
               </p>
-                </div>
+            </div>
 
             {/* Renovation Finance */}
             <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <HomeIcon className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Renovation Finance</h3>
+              <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-4">Renovation Finance</h3>
               <p className="text-gray-600 leading-relaxed">
                 Finance property improvements and upgrades without depleting your savings. Increase property value and rental income potential.
               </p>
@@ -585,7 +435,7 @@ export default function Home() {
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <CheckCircle className="w-8 h-8 text-purple-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Rent Guarantee by AXA Mansard</h3>
+              <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-4">Rent Guarantee by AXA Mansard</h3>
               <p className="text-gray-600 leading-relaxed">
                 Never worry about defaults again. Get guaranteed rent payments even when tenants don't pay, protecting your income stream.
               </p>
@@ -595,7 +445,7 @@ export default function Home() {
           {/* Bottom CTA */}
           <div className="text-center mt-12">
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              <span className="font-semibold text-gray-800">These services are only available to landlords with full portfolio transparency.</span> 
+              <span className="font-semibold text-gray-800">These services are only available to landlords with full portfolio transparency.</span>
               <br />
               Start your journey to becoming a true Oga Landlord today.
             </p>
@@ -612,10 +462,10 @@ export default function Home() {
             <div className="inline-block bg-gradient-to-r from-red-500 to-orange-500 text-white px-6 py-2 rounded-full text-sm font-semibold mb-6">
               EXCLUSIVE EVENT
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-800 mb-8">
-              This is why we created Oga Landlord Week.
+            <h2 className="text-2xl md:text-6xl font-bold text-gray-800 mb-8">
+              Everything you've seen till now is exactly why we created Oga Landlord Week
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">
               One powerful week where you:
             </p>
           </div>
@@ -629,7 +479,7 @@ export default function Home() {
               <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Get Advisory Session</h3>
+              <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-4">Get Advisory Session</h3>
               <p className="text-gray-600 leading-relaxed mb-6">
                 Our experts sit with you and show you how to stop losses and increase ROI on your properties.
               </p>
@@ -645,7 +495,7 @@ export default function Home() {
               <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <MapPin className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Physical Events</h3>
+              <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-4">Physical Events</h3>
               <p className="text-gray-600 leading-relaxed mb-6">
                 Join us at one of our physical landlord events in Lagos or Abuja – connect with other successful landlords.
               </p>
@@ -661,7 +511,7 @@ export default function Home() {
               <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Target className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Landlord Awards</h3>
+              <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-4">Landlord Awards</h3>
               <p className="text-gray-600 leading-relaxed mb-6">
                 By tenants, for good landlords – recognize and celebrate excellence in property management.
               </p>
@@ -676,10 +526,10 @@ export default function Home() {
           {/* Success Stories */}
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 mb-12 border border-blue-200">
             <div className="text-center mb-8">
-              <h3 className="text-3xl font-bold text-gray-800 mb-4">Already, hundreds of landlords across Nigeria have joined.</h3>
+              <h3 className="text-xl md:text-3xl font-bold text-gray-800 mb-4">Already, hundreds of landlords across Nigeria have joined.</h3>
               <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full"></div>
             </div>
-            
+
             <div className="grid md:grid-cols-2 gap-8">
               <div className="text-center p-6 bg-white rounded-xl shadow-sm">
                 <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -688,7 +538,7 @@ export default function Home() {
                 <p className="text-gray-700 text-lg font-medium">
                   They are seeing their properties differently. They now know the truth.
                 </p>
-                  </div>
+              </div>
               <div className="text-center p-6 bg-white rounded-xl shadow-sm">
                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <TrendingDown className="w-6 h-6 text-blue-600" />
@@ -696,9 +546,9 @@ export default function Home() {
                 <p className="text-gray-700 text-lg font-medium">
                   Some even discovered losses they didn't know about – and immediately took action to recover.
                 </p>
-                </div>
               </div>
             </div>
+          </div>
 
           {/* Urgency Warning */}
           <div className="relative bg-gradient-to-r from-red-500 to-orange-500 rounded-2xl p-8 text-center overflow-hidden">
@@ -707,14 +557,14 @@ export default function Home() {
               <div className="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <AlertTriangle className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-3xl font-bold text-white mb-4">But here's the warning:</h3>
-              <p className="text-xl text-orange-100 mb-6">
+              <h3 className="text-xl md:text-3xl font-bold text-white mb-4">But here's the warning:</h3>
+              <p className="text-lg md:text-xl text-orange-100 mb-6">
                 Slots for advisory sessions are limited.
               </p>
-              <p className="text-2xl font-bold text-white mb-6">
+              <p className="text-lg md:text-2xl font-bold text-white mb-6">
                 If you don't sign up now, you might miss the chance.
               </p>
-              <div className="inline-block bg-white text-red-600 px-6 py-3 rounded-full font-bold text-lg">
+              <div className="inline-block bg-white text-red-600 px-6 py-3 rounded-full font-bold text-sm md:text-lg">
                 ⚠️ LIMITED SPOTS AVAILABLE
               </div>
             </div>
@@ -727,7 +577,7 @@ export default function Home() {
       <footer className="bg-gray-900 text-white py-12 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-gray-400">
-            © 2024 Landlord Finance Mastery. Transform your rental property business today.
+            © {new Date().getFullYear()} Landlord Finance Mastery. Transform your rental property business today.
           </p>
         </div>
       </footer>

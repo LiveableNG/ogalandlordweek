@@ -54,8 +54,7 @@ const DashboardComponent = ({ title, children, delay = 0 }: DashboardComponentPr
     return (
         <div
             ref={ref}
-            className={`bg-white rounded-2xl shadow-2xl p-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
+            className={`bg-white rounded-2xl shadow-2xl p-8`}
         >
             <h3 className="text-2xl font-semibold text-gray-800 mb-6">{title}</h3>
             {children}
@@ -456,7 +455,7 @@ export const FinancialDashboard = () => {
                         <div className="bg-orange-50 p-4 rounded-lg border border-orange-200">
                             <h4 className="font-semibold text-orange-800 mb-2">Vacancy Cost Clock</h4>
                             <div className="flex items-center space-x-4">
-                                <div className="text-2xl font-bold text-orange-600">₦35,000</div>
+                                <div className="text-lg md:text-2xl font-bold text-orange-600">₦35,000</div>
                                 <div className="text-sm text-orange-700">daily loss on vacant units</div>
                             </div>
                         </div>
@@ -864,7 +863,7 @@ export const MarketAnalysis = () => {
                     </select>
                     <div className="text-right">
                         <p className="text-sm text-gray-600">Market Position</p>
-                        <p className="text-3xl font-bold text-green-600">Optimal</p>
+                        <p className="text-xl md:text-3xl font-bold text-green-600">Optimal</p>
                     </div>
                 </div>
 
@@ -1097,8 +1096,7 @@ export const DangerSection = ({ title, description, consequences, delay = 0 }: D
     return (
         <section
             ref={ref}
-            className={`py-20 px-6 bg-gradient-to-r from-red-900 to-red-700 transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'
-                }`}
+            className={`py-20 px-6 bg-gradient-to-r from-red-900 to-red-700`}
         >
             <div className="max-w-4xl mx-auto text-center">
                 <AlertTriangle className="w-16 h-16 text-yellow-400 mx-auto mb-6" />
@@ -1146,8 +1144,7 @@ export const QuestionSection = ({ question, delay = 0 }: QuestionSectionProps) =
     return (
         <section
             ref={ref}
-            className={`py-20 px-6 bg-slate-100 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
+            className={`py-20 px-6 bg-slate-100`}
         >
             <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-8">{question}</h2>
@@ -1260,17 +1257,16 @@ export const CourseSection = () => {
     return (
         <section
             ref={ref}
-            className={`py-20 px-6 bg-gradient-to-br from-gray-900 to-black transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'
-                }`}
+            className={`py-20 px-6 bg-gradient-to-br from-gray-900 to-black`}
         >
             <div className="max-w-7xl mx-auto">
                 {/* Story-driven Header */}
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
-                        Think about it
+                    <h2 className="text-2xl md:text-6xl font-bold text-white mb-8">
+                        Think about this
                     </h2>
                     
-                    <div className="space-y-6 text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+                    <div className="space-y-6 text-lg md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
                         <p className="font-medium">
                             Even if you know who paid rent, what next?
                         </p>
@@ -1283,7 +1279,7 @@ export const CourseSection = () => {
                     </div>
 
                     <div className="bg-yellow-900 bg-opacity-20 border border-yellow-500 rounded-2xl p-8 max-w-4xl mx-auto">
-                        <p className="text-2xl md:text-3xl text-yellow-400 font-bold mb-4">
+                        <p className="text-lg md:text-3xl text-yellow-400 font-bold mb-4">
                             That's what the Landlord Finance Course will show you.
                         </p>
                         <p className="text-lg text-gray-200">
@@ -1295,7 +1291,7 @@ export const CourseSection = () => {
                 <div className="grid lg:grid-cols-3 gap-8">
                     {/* Course Curriculum */}
                     <div className="lg:col-span-2">
-                        <h3 className="text-2xl font-semibold text-white mb-8">Complete Course Curriculum</h3>
+                        <h3 className="text-lg md:text-2xl font-semibold text-white mb-8">Complete Course Curriculum</h3>
                         <div className="space-y-4">
                             {modules.map((module) => (
                                 <div key={module.id} className="bg-white/10 backdrop-blur-sm rounded-lg overflow-hidden">
@@ -1340,7 +1336,7 @@ export const CourseSection = () => {
                         <div className="bg-white p-8 rounded-2xl shadow-2xl sticky top-8">
                             <div className="text-center mb-6">
                                 <p className="text-gray-600 line-through text-lg">₦150,000</p>
-                                <p className="text-4xl font-bold text-green-600">FREE</p>
+                                <p className="text-2xl md:text-4xl font-bold text-green-600">FREE</p>
                                 <p className="text-gray-600">During Landlord Week Only</p>
                             </div>
 
@@ -1996,10 +1992,10 @@ export const SignupForm = () => {
                     <div className="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-8">
                         <CheckCircle className="w-12 h-12 text-white" />
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
+                    <h2 className="text-2xl md:text-6xl font-bold text-white mb-8">
                         Welcome to Oga Landlord Week!
                     </h2>
-                    <div className="space-y-6 text-xl text-green-100 max-w-3xl mx-auto mb-12">
+                    <div className="space-y-6 text-lg md:text-xl text-green-100 max-w-3xl mx-auto mb-12">
                         <p className="font-medium">
                             Thank you for taking control of your property portfolio.
                         </p>
@@ -2008,7 +2004,7 @@ export const SignupForm = () => {
                         </p>
                     </div>
                     <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto">
-                        <h3 className="text-2xl font-bold text-white mb-4">What happens next?</h3>
+                        <h3 className="text-lg md:text-2xl font-bold text-white mb-4">What happens next?</h3>
                         <div className="space-y-4 text-left">
                             <div className="flex items-start space-x-3">
                                 <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
@@ -2044,15 +2040,14 @@ export const SignupForm = () => {
     return (
         <section
             ref={ref}
-            className={`py-20 px-6 bg-gradient-to-br from-gray-900 to-black transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'
-                }`}
+            className={`py-20 px-6 bg-gradient-to-br from-gray-900 to-black`}
         >
             <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
+                    <h2 className="text-2xl md:text-6xl font-bold text-white mb-8">
                         Oga Landlord, this is your moment.
                     </h2>
-                    <div className="space-y-6 text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+                    <div className="space-y-6 text-lg md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
                         <p className="font-medium">
                             You can continue managing in the dark… hoping nothing bad happens.
                         </p>
@@ -2061,7 +2056,7 @@ export const SignupForm = () => {
                         </p>
                     </div>
                     <div className="bg-red-900 bg-opacity-20 border border-red-500 rounded-2xl p-8 max-w-4xl mx-auto">
-                        <p className="text-2xl md:text-3xl text-red-400 font-bold mb-4">
+                        <p className="text-lg md:text-3xl text-red-400 font-bold mb-4">
                             Don't be the landlord who discovers losses when it's too late.
                         </p>
                         <p className="text-xl text-gray-200">
@@ -2353,8 +2348,7 @@ export const StrategicInsightsDashboard = () => {
     return (
         <div
             ref={ref}
-            className={`bg-white rounded-2xl shadow-2xl p-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
+            className={`bg-white rounded-2xl shadow-2xl p-8`}
         >
             <h3 className="text-2xl font-semibold text-gray-800 mb-6">Strategic Insights Dashboard</h3>
             
