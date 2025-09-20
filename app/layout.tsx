@@ -10,23 +10,30 @@ const notoSans = Noto_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Landlord Landing Page',
-  description: 'A simple welcome page for landlords',
-  keywords: ['landlord', 'property management', 'rental', 'welcome'],
-  authors: [{ name: 'Landlord App' }],
-  creator: 'Landlord App',
-  publisher: 'Landlord App',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL('https://landlord-app.com'),
+  title: 'Oga Landlord – Dashboard & Finance Course for Nigerian Property Owners',
+  description:
+    'Track rent, manage tenants, and learn property finance with Oga Landlord. Designed for Nigerian landlords in Lagos, Abuja, and across Nigeria.',
+  keywords: [
+    'landlord dashboard Nigeria',
+    'property management software Nigeria',
+    'rent collection Lagos',
+    'landlord finance course',
+    'real estate Nigeria',
+    'property portfolio management',
+    'tenant management Abuja',
+  ],
+  authors: [{ name: 'Oga Landlord' }],
+  creator: 'Oga Landlord',
+  publisher: 'Oga Landlord',
+  metadataBase: new URL('https://ogalandlord.com.ng'),
   openGraph: {
-    title: 'Landlord Landing Page',
-    description: 'A simple welcome page for landlords',
+    title: 'Oga Landlord – Dashboard & Finance Course',
+    description:
+      'Discover Oga Landlord: a powerful dashboard and finance training for Nigerian landlords. Manage rentals, reduce tenant default, and grow your portfolio.',
     type: 'website',
-    locale: 'en_US',
+    locale: 'en_NG', // Nigeria-specific locale
+    url: 'https://ogalandlord.com.ng',
+    siteName: 'Oga Landlord',
   },
   robots: {
     index: true,
@@ -42,7 +49,13 @@ export const metadata: Metadata = {
   verification: {
     google: 'your-google-verification-code',
   },
-}
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+};
+
 
 export default function RootLayout({
   children,
