@@ -29,11 +29,21 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/house-image.png)'
+        }}
+      />
+      
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-60" />
+      
       <div className={`text-center px-6 z-10 max-w-5xl transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-
         <h1 className="text-3xl md:text-7xl font-bold text-white mb-8 leading-tight">
-          Oga Landlord…
+          Oga Landlord!!!
           <br />
           Your property dey shine outside — but inside, your money may be burning quietly.
         </h1>
@@ -55,16 +65,42 @@ const HeroSection = () => {
 const ParallaxSection = () => {
   return (
     <section className="relative h-screen overflow-hidden">
-      {/* Static background image */}
+      {/* Background Image for Mobile */}
       <div
-        className="w-full h-full bg-contain bg-center bg-no-repeat"
+        className="w-full h-full bg-cover bg-center bg-no-repeat md:hidden"
         style={{
-          backgroundImage: 'url(/page-2.png)',
+          backgroundImage: 'url(/page-2-mobile.png)',
           backgroundPosition: 'center',
-          backgroundSize: 'contain',
+          backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat'
         }}
       />
+      
+      {/* Background Image for Desktop */}
+      <div
+        className="w-full h-full bg-cover bg-center bg-no-repeat hidden md:block"
+        style={{
+          backgroundImage: 'url(/page-2-desktop.png)',
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat'
+        }}
+      />
+      
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black bg-opacity-50" />
+      
+      {/* Text overlay */}
+      <div className="absolute inset-0 flex items-end justify-center z-10 pb-16">
+        <div className="text-center px-6 max-w-4xl">
+          <h2 className="text-2xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            If you don't SEE and CONTROL what's happening with your properties, you're not in charge.
+          </h2>
+          <p className="text-lg md:text-2xl text-gray-200 font-medium">
+            Your tenants, your property manager, even life itself is running the show… not you.
+          </p>
+        </div>
+      </div>
     </section>
   );
 };
@@ -87,7 +123,6 @@ const ProblemStorySection = () => {
 
       {/* Dark overlay for text readability */}
       <div className="absolute inset-0 bg-black bg-opacity-60" />
-
       {/* Text content */}
       <div className="relative z-10 h-full flex items-center justify-center">
         <div className="text-center px-6 max-w-5xl">
@@ -95,29 +130,25 @@ const ProblemStorySection = () => {
             <h2 className="text-2xl md:text-6xl font-bold text-white mb-8">
               The Hard Questions
             </h2>
-
             <div className="space-y-6 text-lg md:text-2xl text-white">
               <p className="font-medium">
                 Do you know, right now, which of your tenants has paid rent — and who is still owing?
               </p>
               <p className="font-medium">
-                Do you know how much you've spent on maintenance in the last 6 months — and whether it's eating into your profit?
+                Do you know how much you’ve spent on maintenance in the last 6 months?
               </p>
               <p className="font-medium">
-                Can you prove, with real numbers, whether your property is making you money… or quietly draining it?
+                Can you prove, with data, if your property is making you money… or quietly draining it?
               </p>
             </div>
 
             <div className="space-y-6 text-lg md:text-2xl text-red-400 font-bold">
-              <p>The truth? Most landlords can't.</p>
-              <p>And that is how money burns away quietly.</p>
-              <p>That is how generational wealth disappears.</p>
+              <p>The truth? Most landlords can't.<br />That is how money burns away quietly — how generational wealth disappears.</p>
             </div>
 
             <div className="space-y-6 text-lg md:text-2xl text-yellow-400 font-medium">
-              <p>And if you're looking to own your first property,</p>
-              <p>Do you know the visibility and control you'll need to avoid falling into the same trap?</p>
-              <p className="text-red-400 font-bold">
+              <p>And if you’re looking to own your first property,<br /><br />Do you know how much visibility you’ll need to avoid the same trap?
+              <br />
                 Or will you just let life — and tenants — run the show instead of you?
               </p>
             </div>
@@ -136,7 +167,7 @@ export default function Home() {
       <ProblemStorySection />
 
       {/* Dashboard Reveal Section */}
-      <section className="py-20 px-6 bg-gray-50">
+      <section id="dashboard" className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-2xl md:text-6xl font-bold text-gray-800 mb-6">
@@ -153,7 +184,7 @@ export default function Home() {
 
             <div className="space-y-6">
               {/* Key Metrics Row */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
                 <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
                   <div className="flex items-center space-x-2 mb-2">
                     <HomeIcon className="w-5 h-5 text-blue-600" />
@@ -169,31 +200,31 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
                   <div className="flex items-center space-x-2 mb-2">
-                    <Users className="w-5 h-5 text-green-600" />
+                    <Users className="w-5 h-5 text-blue-600" />
                     <p className="text-sm text-gray-600 font-medium">Tenants</p>
                   </div>
-                  <p className="text-lg md:text-2xl font-bold text-green-600">38</p>
+                  <p className="text-lg md:text-2xl font-bold text-blue-600">38</p>
                   <p className="text-xs text-red-600 font-semibold">Default Rate: 12%</p>
                 </div>
 
-                <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
                   <div className="flex items-center space-x-2 mb-2">
-                    <DollarSign className="w-5 h-5 text-purple-600" />
+                    <DollarSign className="w-5 h-5 text-blue-600" />
                     <p className="text-sm text-gray-600 font-medium">Total Value</p>
                   </div>
-                  <p className="text-lg md:text-2xl font-bold text-purple-600">₦59m</p>
+                  <p className="text-lg md:text-2xl font-bold text-blue-600">₦59m</p>
                   <p className="text-xs text-gray-500">Annual</p>
                 </div>
 
-                <div className="bg-orange-50 p-4 rounded-lg border border-orange-200">
+                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
                   <div className="flex items-center space-x-2 mb-2">
-                    <BarChart3 className="w-5 h-5 text-orange-600" />
+                    <BarChart3 className="w-5 h-5 text-blue-600" />
                     <p className="text-sm text-gray-600 font-medium">Revenue</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-sm text-gray-600">Expected: <span className="font-bold text-orange-600">₦52m</span></p>
+                    <p className="text-sm text-gray-600">Expected: <span className="font-bold text-blue-600">₦52m</span></p>
                     <p className="text-sm text-gray-600">Collected: <span className="font-bold text-green-600">₦41m (79%)</span></p>
                     <p className="text-sm text-gray-600">Outstanding: <span className="font-bold text-red-600">₦11m</span></p>
                   </div>
@@ -259,7 +290,7 @@ export default function Home() {
                     <div className="bg-white p-3 rounded border">
                       <h5 className="font-medium text-gray-800 text-xs mb-2">VACANCY STATUS</h5>
                       <div className="space-y-1 text-xs text-gray-600">
-                        <p>• 3 apartments vacant 90+ days - Lost: ₦2.1m</p>
+                        <p>• 3 apartments vacant 90+ days - Lost: ₦2.1m (₦22,100 daily)</p>
                       </div>
                     </div>
 
@@ -315,18 +346,64 @@ export default function Home() {
                   <div>
                     <h4 className="font-semibold text-red-800 text-sm mb-1">Immediate Action Required</h4>
                     <p className="text-sm text-red-700">
-                      <strong>Because every day you spend without this dashboard, money could already be slipping through your hands.</strong>
+                      <strong>reduce text under immediate action required.</strong>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          
+          {/* Sign up button */}
+          <div className="text-center mt-12">
+            <button 
+              onClick={() => {
+                const signupSection = document.querySelector('#signup-form');
+                signupSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-red-600 hover:to-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
+              Sign up for Oga Landlord Week now
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Duplicate Oga Landlord Week Section */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center">
+            <h2 className="text-2xl md:text-6xl font-bold text-gray-800 mb-8">
+              We are bringing you Oga Landlord Week to help you most of your properties and grow your returns
+            </h2>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button
+                onClick={() => {
+                  const nextSection = document.querySelector('#strategic-insights');
+                  nextSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
+                Learn more
+              </button>
+              <button
+                onClick={() => {
+                  const signupSection = document.querySelector('#signup-form');
+                  signupSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-green-700 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
+                Sign up
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Strategic Insights and Opportunities Section */}
-      <section className="py-20 px-6 bg-white">
+      <section id="strategic-insights" className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-2xl md:text-6xl font-bold text-gray-800 mb-6">
@@ -392,6 +469,19 @@ export default function Home() {
               </div>
             </div>
           </div>
+          
+          {/* Sign up button */}
+          <div className="text-center mt-12">
+            <button 
+              onClick={() => {
+                const signupSection = document.querySelector('#signup-form');
+                signupSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-red-600 hover:to-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
+              Sign up for Oga Landlord Week now
+            </button>
+          </div>
         </div>
       </section>
 
@@ -450,10 +540,25 @@ export default function Home() {
               Start your journey to becoming a true Oga Landlord today.
             </p>
           </div>
+          
+          {/* Sign up button */}
+          <div className="text-center mt-12">
+            <button 
+              onClick={() => {
+                const signupSection = document.querySelector('#signup-form');
+                signupSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-red-600 hover:to-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
+              Sign up for Oga Landlord Week now
+            </button>
+          </div>
         </div>
       </section>
 
-      <CourseSection />
+      <div id="course">
+        <CourseSection />
+      </div>
 
       {/* Oga Landlord Week Section */}
       <section className="py-20 px-6 bg-white">
@@ -466,7 +571,7 @@ export default function Home() {
               Everything you've seen till now is exactly why we created Oga Landlord Week
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">
-              One powerful week where you:
+              One powerful week where you get:
             </p>
           </div>
 
@@ -479,7 +584,7 @@ export default function Home() {
               <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-4">Get Advisory Session</h3>
+              <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-4">Free Expert Advisory Sessions</h3>
               <p className="text-gray-600 leading-relaxed mb-6">
                 Our experts sit with you and show you how to stop losses and increase ROI on your properties.
               </p>
@@ -569,13 +674,42 @@ export default function Home() {
               </div>
             </div>
           </div>
+          
+          {/* Sign up button */}
+          <div className="text-center mt-12">
+            <button 
+              onClick={() => {
+                const signupSection = document.querySelector('#signup-form');
+                signupSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-red-600 hover:to-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
+              Sign up for Oga Landlord Week now
+            </button>
+          </div>
         </div>
       </section>
 
-      <SignupForm />
+      <div id="signup-form">
+        <SignupForm />
+      </div>
 
       <footer className="bg-gray-900 text-white py-12 px-6">
         <div className="max-w-4xl mx-auto text-center">
+          {/* Logos */}
+          <div className="flex justify-center items-center space-x-8 mb-6">
+            <img 
+              src="https://api.liveable.ng/images/gt-logo.png" 
+              alt="GoodTenants" 
+              className="h-8 w-auto"
+            />
+            <img 
+              src="https://www.liveable.ng/assets/logo-BVMJXcoO.svg" 
+              alt="Liveable" 
+              className="h-8 w-auto"
+            />
+          </div>
+          
           <p className="text-gray-400">
             © {new Date().getFullYear()} Landlord Finance Mastery. Transform your rental property business today.
           </p>

@@ -2256,7 +2256,20 @@ export const SignupForm = () => {
                                     className="mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                                 />
                                 <div>
-                                    <p className="font-medium text-white">I want this dashboard for all my properties</p>
+                                    <p className="font-medium text-white">
+                                        <a 
+                                            href="#dashboard" 
+                                            className="text-blue-300 hover:text-blue-200 underline mr-2"
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                const dashboardSection = document.querySelector('#dashboard');
+                                                dashboardSection?.scrollIntoView({ behavior: 'smooth' });
+                                            }}
+                                        >
+                                            View Dashboard →
+                                        </a>
+                                        I want this dashboard for all my properties
+                                    </p>
                                     <p className="text-sm text-gray-300 mt-1">
                                         If you're not getting this, you might be in trouble. This dashboard helps you monitor the state of your properties in near real-time.
                                     </p>
@@ -2272,7 +2285,20 @@ export const SignupForm = () => {
                                     className="mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                                 />
                                 <div>
-                                    <p className="font-medium text-white">Sign me up for the Landlord Finance Course</p>
+                                    <p className="font-medium text-white">
+                                        <a 
+                                            href="#course" 
+                                            className="text-blue-300 hover:text-blue-200 underline mr-2"
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                const courseSection = document.querySelector('#course');
+                                                courseSection?.scrollIntoView({ behavior: 'smooth' });
+                                            }}
+                                        >
+                                            View Course →
+                                        </a>
+                                        Sign me up for the Landlord Finance Course
+                                    </p>
                                     <p className="text-sm text-gray-300 mt-1">
                                         Master the financial strategies that separate successful landlords from the rest. FREE during Landlord Week.
                                     </p>
