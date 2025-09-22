@@ -403,7 +403,7 @@ export default function Home() {
           {/* Success Stories */}
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 mb-12 border border-blue-200">
             <div className="text-center mb-8">
-              <h3 className="text-xl md:text-3xl font-bold text-gray-800 mb-4">Already, hundreds of landlords across Nigeria have joined.</h3>
+              <h3 className="text-xl md:text-3xl font-bold text-gray-800 mb-4">Already, hundreds of landlords across Nigeria are already using technology to supercharge their assets.</h3>
               <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full"></div>
             </div>
 
@@ -504,7 +504,7 @@ export default function Home() {
                   />
                 </div>
               </div>
-              
+
               {/* Content */}
               <div className="flex-1 text-center md:text-left">
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
@@ -567,11 +567,11 @@ export default function Home() {
                 { name: "Ubosi Eleh", logo: "https://ubosieleh.com/wp-content/uploads/2025/08/image-59.svg" },
               ].map((partner, index) => (
                 <div key={index} className="bg-white rounded-lg p-4 text-center hover:shadow-md transition-shadow duration-300 border border-gray-200">
-                    <img
-                      src={partner.logo}
-                      alt={partner.name}
-                      className="w-auto h-12 object-contain"
-                    />
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="w-auto h-12 object-contain"
+                  />
                 </div>
               ))}
             </div>
@@ -584,27 +584,27 @@ export default function Home() {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { 
-                  name: "Businessday", 
-                  desc: "Leading business newspaper", 
+                {
+                  name: "Businessday",
+                  desc: "Leading business newspaper",
                   logo: "https://www.goodtenants.io/_next/image?url=%2Fassets%2Ffeatured%2F01.png&w=384&q=75",
                   href: "https://businessday.ng/news/article/how-data-tech-can-help-unlock-property-industrys-potential-atanda/"
                 },
-                { 
-                  name: "ChannelsTV", 
-                  desc: "Reputable news channel", 
+                {
+                  name: "ChannelsTV",
+                  desc: "Reputable news channel",
                   logo: "https://www.goodtenants.io/_next/image?url=%2Fassets%2Ffeatured%2F02.png&w=384&q=75",
                   href: "https://www.youtube.com/watch?v=KL4pg73NOG0"
                 },
-                { 
-                  name: "CityPeople", 
-                  desc: "Popular lifestyle magazine", 
+                {
+                  name: "CityPeople",
+                  desc: "Popular lifestyle magazine",
                   logo: "https://www.goodtenants.io/_next/image?url=%2Fassets%2Ffeatured%2F03.webp&w=384&q=75",
                   href: "https://www.citypeopleonline.com/niesv-lagos-branch-celebrates-honours-nite-2025-in-grand-style/"
                 }
               ].map((media, index) => (
-                <a 
-                  key={index} 
+                <a
+                  key={index}
                   href={media.href}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -718,10 +718,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-2xl md:text-6xl font-bold text-gray-800 mb-6">
-              Supercharging your assets
+              Do you know there is a lot more you can gain with your assets?
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">
-              Because real Oga Landlords have this transparency, they have clarity on their income, can make better decisions, and also access services such as:
+              You’re missing out on far more than you realize if you don’t have the right property manager or the right technology
             </p>
           </div>
 
@@ -753,7 +753,7 @@ export default function Home() {
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <CheckCircle className="w-8 h-8 text-purple-600" />
               </div>
-              <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-4">Rent Guarantee by AXA Mansard</h3>
+              <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-4">Rent Guarantee</h3>
               <p className="text-gray-600 leading-relaxed">
                 Never worry about defaults again. Get guaranteed rent payments even when tenants don't pay, protecting your income stream.
               </p>
@@ -763,7 +763,7 @@ export default function Home() {
           {/* Bottom CTA */}
           <div className="text-center mt-12">
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              <span className="font-semibold text-gray-800">These services are only available to landlords with full portfolio transparency.</span>
+              <span className="font-semibold text-gray-800">"Start your journey to landlords with full portfolio today.</span>
               <br />
               Start your journey to becoming a true Oga Landlord today.
             </p>
@@ -778,7 +778,7 @@ export default function Home() {
               }}
               className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-red-600 hover:to-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
-              Sign up for Oga Landlord Week now
+              Learn more during Oga Landlord week
             </button>
           </div>
         </div>
@@ -859,7 +859,7 @@ export default function Home() {
           {/* Success Stories */}
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 mb-12 border border-blue-200">
             <div className="text-center mb-8">
-              <h3 className="text-xl md:text-3xl font-bold text-gray-800 mb-4">Already, hundreds of landlords across Nigeria have joined.</h3>
+              <h3 className="text-xl md:text-3xl font-bold text-gray-800 mb-4">Already, hundreds of landlords across Nigeria are already using technology to supercharge their assets.</h3>
               <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full"></div>
             </div>
 
@@ -924,20 +924,6 @@ export default function Home() {
 
       <footer className="bg-gray-900 text-white py-12 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Logos */}
-          <div className="flex justify-center items-center space-x-8 mb-6">
-            <img
-              src="https://api.liveable.ng/images/gt-logo.png"
-              alt="GoodTenants"
-              className="h-8 w-auto"
-            />
-            <img
-              src="https://www.liveable.ng/assets/logo-BVMJXcoO.svg"
-              alt="Liveable"
-              className="h-8 w-auto"
-            />
-          </div>
-
           <p className="text-gray-400">
             © {new Date().getFullYear()} Landlord Finance Mastery. Transform your rental property business today.
           </p>

@@ -134,8 +134,8 @@ export const FinancialDashboard = () => {
                     <button
                         onClick={() => setActiveTab('overview')}
                         className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'overview'
-                                ? 'bg-white text-gray-900 shadow-sm'
-                                : 'text-gray-600 hover:text-gray-900'
+                            ? 'bg-white text-gray-900 shadow-sm'
+                            : 'text-gray-600 hover:text-gray-900'
                             }`}
                     >
                         Overview
@@ -143,8 +143,8 @@ export const FinancialDashboard = () => {
                     <button
                         onClick={() => setActiveTab('tenants')}
                         className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'tenants'
-                                ? 'bg-white text-gray-900 shadow-sm'
-                                : 'text-gray-600 hover:text-gray-900'
+                            ? 'bg-white text-gray-900 shadow-sm'
+                            : 'text-gray-600 hover:text-gray-900'
                             }`}
                     >
                         Tenant Analysis
@@ -152,8 +152,8 @@ export const FinancialDashboard = () => {
                     <button
                         onClick={() => setActiveTab('collection')}
                         className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'collection'
-                                ? 'bg-white text-gray-900 shadow-sm'
-                                : 'text-gray-600 hover:text-gray-900'
+                            ? 'bg-white text-gray-900 shadow-sm'
+                            : 'text-gray-600 hover:text-gray-900'
                             }`}
                     >
                         Collection Details
@@ -161,8 +161,8 @@ export const FinancialDashboard = () => {
                     <button
                         onClick={() => setActiveTab('health')}
                         className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'health'
-                                ? 'bg-white text-gray-900 shadow-sm'
-                                : 'text-gray-600 hover:text-gray-900'
+                            ? 'bg-white text-gray-900 shadow-sm'
+                            : 'text-gray-600 hover:text-gray-900'
                             }`}
                     >
                         Rental Health
@@ -571,8 +571,8 @@ export const MaintenanceTracker = () => {
                     <button
                         onClick={() => setActiveTab('overview')}
                         className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'overview'
-                                ? 'bg-white text-gray-900 shadow-sm'
-                                : 'text-gray-600 hover:text-gray-900'
+                            ? 'bg-white text-gray-900 shadow-sm'
+                            : 'text-gray-600 hover:text-gray-900'
                             }`}
                     >
                         Property Health
@@ -580,8 +580,8 @@ export const MaintenanceTracker = () => {
                     <button
                         onClick={() => setActiveTab('maintenance')}
                         className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'maintenance'
-                                ? 'bg-white text-gray-900 shadow-sm'
-                                : 'text-gray-600 hover:text-gray-900'
+                            ? 'bg-white text-gray-900 shadow-sm'
+                            : 'text-gray-600 hover:text-gray-900'
                             }`}
                     >
                         Maintenance Analysis
@@ -589,8 +589,8 @@ export const MaintenanceTracker = () => {
                     <button
                         onClick={() => setActiveTab('inspections')}
                         className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'inspections'
-                                ? 'bg-white text-gray-900 shadow-sm'
-                                : 'text-gray-600 hover:text-gray-900'
+                            ? 'bg-white text-gray-900 shadow-sm'
+                            : 'text-gray-600 hover:text-gray-900'
                             }`}
                     >
                         Inspections & Reports
@@ -1257,7 +1257,7 @@ export const CourseSection = () => {
                     <h2 className="text-2xl md:text-6xl font-bold text-white mb-8">
                         Think about this
                     </h2>
-                    
+
                     <div className="space-y-6 text-lg md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
                         <p className="font-medium">
                             Even if you know who paid rent, what next?
@@ -1302,13 +1302,12 @@ export const CourseSection = () => {
                                                 {module.lessons.length} lessons
                                             </p>
                                         </div>
-                                        <ChevronDown 
-                                            className={`w-5 h-5 text-white transition-transform ${
-                                                expandedModule === module.id ? 'rotate-180' : ''
-                                            }`} 
+                                        <ChevronDown
+                                            className={`w-5 h-5 text-white transition-transform ${expandedModule === module.id ? 'rotate-180' : ''
+                                                }`}
                                         />
                                     </button>
-                                    
+
                                     {expandedModule === module.id && (
                                         <div className="px-6 pb-6 bg-white/5">
                                             <div className="space-y-3">
@@ -1370,330 +1369,326 @@ export const CourseSection = () => {
 };
 
 export const FinancialSafetyTracker = () => {
-  const [activeTab, setActiveTab] = useState('remittance');
+    const [activeTab, setActiveTab] = useState('remittance');
 
-  return (
-    <DashboardComponent title="Financial Safety & Opportunities" delay={200}>
-      <div className="space-y-6">
-        {/* Dashboard Tabs */}
-        <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg">
-          <button
-            onClick={() => setActiveTab('remittance')}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-              activeTab === 'remittance' 
-                ? 'bg-white text-gray-900 shadow-sm' 
-                : 'text-gray-600 hover:text-gray-900'
-            }`}
-          >
-            Remittance Lag
-          </button>
-          <button
-            onClick={() => setActiveTab('expenses')}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-              activeTab === 'expenses' 
-                ? 'bg-white text-gray-900 shadow-sm' 
-                : 'text-gray-600 hover:text-gray-900'
-            }`}
-          >
-            Expense Transparency
-          </button>
-        </div>
+    return (
+        <DashboardComponent title="Financial Safety & Opportunities" delay={200}>
+            <div className="space-y-6">
+                {/* Dashboard Tabs */}
+                <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg">
+                    <button
+                        onClick={() => setActiveTab('remittance')}
+                        className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'remittance'
+                                ? 'bg-white text-gray-900 shadow-sm'
+                                : 'text-gray-600 hover:text-gray-900'
+                            }`}
+                    >
+                        Remittance Lag
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('expenses')}
+                        className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'expenses'
+                                ? 'bg-white text-gray-900 shadow-sm'
+                                : 'text-gray-600 hover:text-gray-900'
+                            }`}
+                    >
+                        Expense Transparency
+                    </button>
+                </div>
 
-        {/* Key Metrics - Always Visible */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-          <div className="bg-red-50 p-3 rounded-lg border border-red-200">
-            <div className="flex items-center space-x-2 mb-1">
-              <Clock className="w-4 h-4 text-red-600" />
-              <p className="text-xs text-gray-600">Remittance Delay</p>
-            </div>
-            <p className="text-lg font-bold text-red-600">21 days</p>
-            <p className="text-xs text-gray-500">vs 7 days industry avg</p>
-          </div>
-          <div className="bg-orange-50 p-3 rounded-lg border border-orange-200">
-            <div className="flex items-center space-x-2 mb-1">
-              <DollarSign className="w-4 h-4 text-orange-600" />
-              <p className="text-xs text-gray-600">Money at Risk</p>
-            </div>
-            <p className="text-lg font-bold text-orange-600">₦1.2M</p>
-            <p className="text-xs text-gray-500">delayed transfers</p>
-          </div>
-          <div className="bg-yellow-50 p-3 rounded-lg border border-yellow-200">
-            <div className="flex items-center space-x-2 mb-1">
-              <AlertTriangle className="w-4 h-4 text-yellow-600" />
-              <p className="text-xs text-gray-600">Overbilling Detected</p>
-            </div>
-            <p className="text-lg font-bold text-yellow-600">₦350k</p>
-            <p className="text-xs text-gray-500">excess charges</p>
-          </div>
-          <div className="bg-blue-50 p-3 rounded-lg border border-blue-200">
-            <div className="flex items-center space-x-2 mb-1">
-              <BarChart3 className="w-4 h-4 text-blue-600" />
-              <p className="text-xs text-gray-600">Monthly Loss</p>
-            </div>
-            <p className="text-lg font-bold text-blue-600">₦350k</p>
-            <p className="text-xs text-gray-500">lost interest</p>
-          </div>
-        </div>
+                {/* Key Metrics - Always Visible */}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                    <div className="bg-red-50 p-3 rounded-lg border border-red-200">
+                        <div className="flex items-center space-x-2 mb-1">
+                            <Clock className="w-4 h-4 text-red-600" />
+                            <p className="text-xs text-gray-600">Remittance Delay</p>
+                        </div>
+                        <p className="text-lg font-bold text-red-600">21 days</p>
+                        <p className="text-xs text-gray-500">vs 7 days industry avg</p>
+                    </div>
+                    <div className="bg-orange-50 p-3 rounded-lg border border-orange-200">
+                        <div className="flex items-center space-x-2 mb-1">
+                            <DollarSign className="w-4 h-4 text-orange-600" />
+                            <p className="text-xs text-gray-600">Money at Risk</p>
+                        </div>
+                        <p className="text-lg font-bold text-orange-600">₦1.2M</p>
+                        <p className="text-xs text-gray-500">delayed transfers</p>
+                    </div>
+                    <div className="bg-yellow-50 p-3 rounded-lg border border-yellow-200">
+                        <div className="flex items-center space-x-2 mb-1">
+                            <AlertTriangle className="w-4 h-4 text-yellow-600" />
+                            <p className="text-xs text-gray-600">Overbilling Detected</p>
+                        </div>
+                        <p className="text-lg font-bold text-yellow-600">₦350k</p>
+                        <p className="text-xs text-gray-500">excess charges</p>
+                    </div>
+                    <div className="bg-blue-50 p-3 rounded-lg border border-blue-200">
+                        <div className="flex items-center space-x-2 mb-1">
+                            <BarChart3 className="w-4 h-4 text-blue-600" />
+                            <p className="text-xs text-gray-600">Monthly Loss</p>
+                        </div>
+                        <p className="text-lg font-bold text-blue-600">₦350k</p>
+                        <p className="text-xs text-gray-500">lost interest</p>
+                    </div>
+                </div>
 
-        {/* Tab Content */}
-        {activeTab === 'remittance' && (
-          <div className="space-y-4">
-            <div className="bg-red-50 p-4 rounded-lg border border-red-200">
-              <h4 className="font-semibold text-red-800 mb-2">Remittance Lag Analysis</h4>
-              <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-700">Your PM takes 21 days to remit rent</span>
-                  <span className="text-lg font-bold text-red-600">₦1.2M at risk</span>
-                </div>
-                <p className="text-xs text-red-700">Industry standard is 7 days - you're losing ₦350k monthly in lost interest</p>
-                <div className="bg-white p-2 rounded border-l-4 border-red-400">
-                  <p className="text-xs font-medium text-red-800">Action Required:</p>
-                  <p className="text-xs text-red-700">"Demand immediate remittance or switch PMs."</p>
-                </div>
-              </div>
-            </div>
+                {/* Tab Content */}
+                {activeTab === 'remittance' && (
+                    <div className="space-y-4">
+                        <div className="bg-red-50 p-4 rounded-lg border border-red-200">
+                            <h4 className="font-semibold text-red-800 mb-2">Remittance Lag Analysis</h4>
+                            <div className="space-y-2">
+                                <div className="flex justify-between items-center">
+                                    <span className="text-sm text-gray-700">Your PM takes 21 days to remit rent</span>
+                                    <span className="text-lg font-bold text-red-600">₦1.2M at risk</span>
+                                </div>
+                                <p className="text-xs text-red-700">Industry standard is 7 days - you're losing ₦350k monthly in lost interest</p>
+                                <div className="bg-white p-2 rounded border-l-4 border-red-400">
+                                    <p className="text-xs font-medium text-red-800">Action Required:</p>
+                                    <p className="text-xs text-red-700">"Demand immediate remittance or switch PMs."</p>
+                                </div>
+                            </div>
+                        </div>
 
-            <div className="bg-orange-50 p-4 rounded-lg border border-orange-200">
-              <h4 className="font-semibold text-orange-800 mb-2">Financial Risk Assessment</h4>
-              <div className="space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-gray-700">Money held by PM:</span>
-                  <span className="font-semibold text-orange-600">₦1.2M</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-700">Monthly interest loss:</span>
-                  <span className="font-semibold text-orange-600">₦350k</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-700">Annual opportunity cost:</span>
-                  <span className="font-semibold text-orange-600">₦4.2M</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
+                        <div className="bg-orange-50 p-4 rounded-lg border border-orange-200">
+                            <h4 className="font-semibold text-orange-800 mb-2">Financial Risk Assessment</h4>
+                            <div className="space-y-2 text-sm">
+                                <div className="flex justify-between">
+                                    <span className="text-gray-700">Money held by PM:</span>
+                                    <span className="font-semibold text-orange-600">₦1.2M</span>
+                                </div>
+                                <div className="flex justify-between">
+                                    <span className="text-gray-700">Monthly interest loss:</span>
+                                    <span className="font-semibold text-orange-600">₦350k</span>
+                                </div>
+                                <div className="flex justify-between">
+                                    <span className="text-gray-700">Annual opportunity cost:</span>
+                                    <span className="font-semibold text-orange-600">₦4.2M</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
 
-        {activeTab === 'expenses' && (
-          <div className="space-y-4">
-            <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
-              <h4 className="font-semibold text-yellow-800 mb-2">Expense Transparency Issues</h4>
-              <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-700">Repair overbilling detected: ₦850k charged for ₦500k work</span>
-                  <span className="text-lg font-bold text-yellow-600">₦350k excess</span>
-                </div>
-                <p className="text-xs text-yellow-700">No expense transparency = hidden theft from your pocket</p>
-                <div className="bg-white p-2 rounded border-l-4 border-yellow-400">
-                  <p className="text-xs font-medium text-yellow-800">Action Required:</p>
-                  <p className="text-xs text-yellow-700">"Request detailed expense breakdowns and receipts."</p>
-                </div>
-              </div>
-            </div>
+                {activeTab === 'expenses' && (
+                    <div className="space-y-4">
+                        <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                            <h4 className="font-semibold text-yellow-800 mb-2">Expense Transparency Issues</h4>
+                            <div className="space-y-2">
+                                <div className="flex justify-between items-center">
+                                    <span className="text-sm text-gray-700">Repair overbilling detected: ₦850k charged for ₦500k work</span>
+                                    <span className="text-lg font-bold text-yellow-600">₦350k excess</span>
+                                </div>
+                                <p className="text-xs text-yellow-700">No expense transparency = hidden theft from your pocket</p>
+                                <div className="bg-white p-2 rounded border-l-4 border-yellow-400">
+                                    <p className="text-xs font-medium text-yellow-800">Action Required:</p>
+                                    <p className="text-xs text-yellow-700">"Request detailed expense breakdowns and receipts."</p>
+                                </div>
+                            </div>
+                        </div>
 
-            <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-              <h4 className="font-semibold text-gray-800 mb-2">Expense Categories</h4>
-              <div className="space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-gray-700">Plumbing repair (overbilled):</span>
-                  <span className="font-semibold text-red-600">₦850k (should be ₦500k)</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-700">Electrical work:</span>
-                  <span className="font-semibold text-gray-800">₦200k</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-700">General maintenance:</span>
-                  <span className="font-semibold text-gray-800">₦150k</span>
-                </div>
-                <div className="flex justify-between text-red-600">
-                  <span>Total overbilling detected:</span>
-                  <span className="font-bold">₦350k</span>
-                </div>
-              </div>
+                        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <h4 className="font-semibold text-gray-800 mb-2">Expense Categories</h4>
+                            <div className="space-y-2 text-sm">
+                                <div className="flex justify-between">
+                                    <span className="text-gray-700">Plumbing repair (overbilled):</span>
+                                    <span className="font-semibold text-red-600">₦850k (should be ₦500k)</span>
+                                </div>
+                                <div className="flex justify-between">
+                                    <span className="text-gray-700">Electrical work:</span>
+                                    <span className="font-semibold text-gray-800">₦200k</span>
+                                </div>
+                                <div className="flex justify-between">
+                                    <span className="text-gray-700">General maintenance:</span>
+                                    <span className="font-semibold text-gray-800">₦150k</span>
+                                </div>
+                                <div className="flex justify-between text-red-600">
+                                    <span>Total overbilling detected:</span>
+                                    <span className="font-bold">₦350k</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
-          </div>
-        )}
-      </div>
-    </DashboardComponent>
-  );
+        </DashboardComponent>
+    );
 };
 
 export const ReputationTracker = () => {
-  const [activeTab, setActiveTab] = useState('complaints');
+    const [activeTab, setActiveTab] = useState('complaints');
 
-  return (
-    <DashboardComponent title="Reputation & Tenant Sentiment" delay={400}>
-      <div className="space-y-6">
-        {/* Dashboard Tabs */}
-        <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg">
-          <button
-            onClick={() => setActiveTab('complaints')}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-              activeTab === 'complaints' 
-                ? 'bg-white text-gray-900 shadow-sm' 
-                : 'text-gray-600 hover:text-gray-900'
-            }`}
-          >
-            Tenant Complaints
-          </button>
-          <button
-            onClick={() => setActiveTab('credit')}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-              activeTab === 'credit' 
-                ? 'bg-white text-gray-900 shadow-sm' 
-                : 'text-gray-600 hover:text-gray-900'
-            }`}
-          >
-            Credit Health
-          </button>
-        </div>
-
-        {/* Key Metrics - Always Visible */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-          <div className="bg-red-50 p-3 rounded-lg border border-red-200">
-            <div className="flex items-center space-x-2 mb-1">
-              <AlertTriangle className="w-4 h-4 text-red-600" />
-              <p className="text-xs text-gray-600">Unresolved Complaints</p>
-            </div>
-            <p className="text-lg font-bold text-red-600">3</p>
-            <p className="text-xs text-gray-500">older than 45 days</p>
-          </div>
-          <div className="bg-orange-50 p-3 rounded-lg border border-orange-200">
-            <div className="flex items-center space-x-2 mb-1">
-              <TrendingDown className="w-4 h-4 text-orange-600" />
-              <p className="text-xs text-gray-600">Credit Drops</p>
-            </div>
-            <p className="text-lg font-bold text-orange-600">2</p>
-            <p className="text-xs text-gray-500">tenants in 6 months</p>
-          </div>
-          <div className="bg-yellow-50 p-3 rounded-lg border border-yellow-200">
-            <div className="flex items-center space-x-2 mb-1">
-              <Users className="w-4 h-4 text-yellow-600" />
-              <p className="text-xs text-gray-600">Churn Risk</p>
-            </div>
-            <p className="text-lg font-bold text-yellow-600">High</p>
-            <p className="text-xs text-gray-500">dissatisfaction rising</p>
-          </div>
-          <div className="bg-blue-50 p-3 rounded-lg border border-blue-200">
-            <div className="flex items-center space-x-2 mb-1">
-              <DollarSign className="w-4 h-4 text-blue-600" />
-              <p className="text-xs text-gray-600">Vacancy Cost</p>
-            </div>
-            <p className="text-lg font-bold text-blue-600">₦2.1M</p>
-            <p className="text-xs text-gray-500">reputation damage</p>
-          </div>
-        </div>
-
-        {/* Tab Content */}
-        {activeTab === 'complaints' && (
-          <div className="space-y-4">
-            <div className="bg-red-50 p-4 rounded-lg border border-red-200">
-              <h4 className="font-semibold text-red-800 mb-2">Unresolved Complaints</h4>
-              <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-700">3 complaints older than 45 days</span>
-                  <span className="text-lg font-bold text-red-600">⚠️ HIGH RISK</span>
+    return (
+        <DashboardComponent title="Reputation & Tenant Sentiment" delay={400}>
+            <div className="space-y-6">
+                {/* Dashboard Tabs */}
+                <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg">
+                    <button
+                        onClick={() => setActiveTab('complaints')}
+                        className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'complaints'
+                                ? 'bg-white text-gray-900 shadow-sm'
+                                : 'text-gray-600 hover:text-gray-900'
+                            }`}
+                    >
+                        Tenant Complaints
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('credit')}
+                        className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'credit'
+                                ? 'bg-white text-gray-900 shadow-sm'
+                                : 'text-gray-600 hover:text-gray-900'
+                            }`}
+                    >
+                        Credit Health
+                    </button>
                 </div>
-                <p className="text-xs text-red-700">Dissatisfaction increases churn and vacancy risk - costing you ₦2.1M in lost rent</p>
-                <div className="bg-white p-2 rounded border-l-4 border-red-400">
-                  <p className="text-xs font-medium text-red-800">Action Required:</p>
-                  <p className="text-xs text-red-700">"Resolve complaints immediately to prevent reputation damage."</p>
-                </div>
-              </div>
-            </div>
 
-            <div className="bg-white p-4 rounded-lg border">
-              <h4 className="font-semibold text-gray-800 mb-4">Complaint Details</h4>
-              <div className="space-y-3">
-                <div className="border rounded-lg p-3">
-                  <div className="flex justify-between items-start mb-2">
-                    <div>
-                      <p className="font-medium text-sm text-gray-800">Unit A2 - Water Pressure Issue</p>
-                      <p className="text-xs text-gray-500">Reported 67 days ago</p>
+                {/* Key Metrics - Always Visible */}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                    <div className="bg-red-50 p-3 rounded-lg border border-red-200">
+                        <div className="flex items-center space-x-2 mb-1">
+                            <AlertTriangle className="w-4 h-4 text-red-600" />
+                            <p className="text-xs text-gray-600">Unresolved Complaints</p>
+                        </div>
+                        <p className="text-lg font-bold text-red-600">3</p>
+                        <p className="text-xs text-gray-500">older than 45 days</p>
                     </div>
-                    <span className="px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs font-semibold">Critical</span>
-                  </div>
-                  <p className="text-xs text-gray-600">Tenant: "Water pressure has been low for 2 months, affecting daily life"</p>
-                </div>
-                <div className="border rounded-lg p-3">
-                  <div className="flex justify-between items-start mb-2">
-                    <div>
-                      <p className="font-medium text-sm text-gray-800">Unit B1 - AC Not Working</p>
-                      <p className="text-xs text-gray-500">Reported 52 days ago</p>
+                    <div className="bg-orange-50 p-3 rounded-lg border border-orange-200">
+                        <div className="flex items-center space-x-2 mb-1">
+                            <TrendingDown className="w-4 h-4 text-orange-600" />
+                            <p className="text-xs text-gray-600">Credit Drops</p>
+                        </div>
+                        <p className="text-lg font-bold text-orange-600">2</p>
+                        <p className="text-xs text-gray-500">tenants in 6 months</p>
                     </div>
-                    <span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-semibold">High</span>
-                  </div>
-                  <p className="text-xs text-gray-600">Tenant: "AC has been broken since last month, very uncomfortable"</p>
-                </div>
-                <div className="border rounded-lg p-3">
-                  <div className="flex justify-between items-start mb-2">
-                    <div>
-                      <p className="font-medium text-sm text-gray-800">Unit 102 - Security Concerns</p>
-                      <p className="text-xs text-gray-500">Reported 48 days ago</p>
+                    <div className="bg-yellow-50 p-3 rounded-lg border border-yellow-200">
+                        <div className="flex items-center space-x-2 mb-1">
+                            <Users className="w-4 h-4 text-yellow-600" />
+                            <p className="text-xs text-gray-600">Churn Risk</p>
+                        </div>
+                        <p className="text-lg font-bold text-yellow-600">High</p>
+                        <p className="text-xs text-gray-500">dissatisfaction rising</p>
                     </div>
-                    <span className="px-2 py-1 bg-orange-100 text-orange-800 rounded-full text-xs font-semibold">Medium</span>
-                  </div>
-                  <p className="text-xs text-gray-600">Tenant: "Gate security is unreliable, feeling unsafe"</p>
+                    <div className="bg-blue-50 p-3 rounded-lg border border-blue-200">
+                        <div className="flex items-center space-x-2 mb-1">
+                            <DollarSign className="w-4 h-4 text-blue-600" />
+                            <p className="text-xs text-gray-600">Vacancy Cost</p>
+                        </div>
+                        <p className="text-lg font-bold text-blue-600">₦2.1M</p>
+                        <p className="text-xs text-gray-500">reputation damage</p>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        )}
 
-        {activeTab === 'credit' && (
-          <div className="space-y-4">
-            <div className="bg-orange-50 p-4 rounded-lg border border-orange-200">
-              <h4 className="font-semibold text-orange-800 mb-2">Tenant Credit Health</h4>
-              <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-700">2 tenants' credit scores dropped in last 6 months</span>
-                  <span className="text-lg font-bold text-orange-600">Rising Default Risk</span>
-                </div>
-                <p className="text-xs text-orange-700">Credit deterioration indicates financial stress - higher risk of non-payment</p>
-                <div className="bg-white p-2 rounded border-l-4 border-orange-400">
-                  <p className="text-xs font-medium text-orange-800">Action Required:</p>
-                  <p className="text-xs text-orange-700">"Monitor payment patterns and consider early intervention."</p>
-                </div>
-              </div>
-            </div>
+                {/* Tab Content */}
+                {activeTab === 'complaints' && (
+                    <div className="space-y-4">
+                        <div className="bg-red-50 p-4 rounded-lg border border-red-200">
+                            <h4 className="font-semibold text-red-800 mb-2">Unresolved Complaints</h4>
+                            <div className="space-y-2">
+                                <div className="flex justify-between items-center">
+                                    <span className="text-sm text-gray-700">3 complaints older than 45 days</span>
+                                    <span className="text-lg font-bold text-red-600">⚠️ HIGH RISK</span>
+                                </div>
+                                <p className="text-xs text-red-700">Dissatisfaction increases churn and vacancy risk - costing you ₦2.1M in lost rent</p>
+                                <div className="bg-white p-2 rounded border-l-4 border-red-400">
+                                    <p className="text-xs font-medium text-red-800">Action Required:</p>
+                                    <p className="text-xs text-red-700">"Resolve complaints immediately to prevent reputation damage."</p>
+                                </div>
+                            </div>
+                        </div>
 
-            <div className="bg-white p-4 rounded-lg border">
-              <h4 className="font-semibold text-gray-800 mb-4">Credit Score Changes</h4>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center p-3 bg-gray-50 rounded">
-                  <div>
-                    <p className="font-medium text-sm text-gray-800">Fatima Ahmed - Unit A2</p>
-                    <p className="text-xs text-gray-500">Score dropped from 720 to 580</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-sm font-semibold text-red-600">-140 points</p>
-                    <p className="text-xs text-red-600">High Risk</p>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center p-3 bg-gray-50 rounded">
-                  <div>
-                    <p className="font-medium text-sm text-gray-800">Chinedu Okoro - Unit B1</p>
-                    <p className="text-xs text-gray-500">Score dropped from 680 to 620</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-sm font-semibold text-orange-600">-60 points</p>
-                    <p className="text-xs text-orange-600">Medium Risk</p>
-                  </div>
-                </div>
-              </div>
+                        <div className="bg-white p-4 rounded-lg border">
+                            <h4 className="font-semibold text-gray-800 mb-4">Complaint Details</h4>
+                            <div className="space-y-3">
+                                <div className="border rounded-lg p-3">
+                                    <div className="flex justify-between items-start mb-2">
+                                        <div>
+                                            <p className="font-medium text-sm text-gray-800">Unit A2 - Water Pressure Issue</p>
+                                            <p className="text-xs text-gray-500">Reported 67 days ago</p>
+                                        </div>
+                                        <span className="px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs font-semibold">Critical</span>
+                                    </div>
+                                    <p className="text-xs text-gray-600">Tenant: "Water pressure has been low for 2 months, affecting daily life"</p>
+                                </div>
+                                <div className="border rounded-lg p-3">
+                                    <div className="flex justify-between items-start mb-2">
+                                        <div>
+                                            <p className="font-medium text-sm text-gray-800">Unit B1 - AC Not Working</p>
+                                            <p className="text-xs text-gray-500">Reported 52 days ago</p>
+                                        </div>
+                                        <span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-semibold">High</span>
+                                    </div>
+                                    <p className="text-xs text-gray-600">Tenant: "AC has been broken since last month, very uncomfortable"</p>
+                                </div>
+                                <div className="border rounded-lg p-3">
+                                    <div className="flex justify-between items-start mb-2">
+                                        <div>
+                                            <p className="font-medium text-sm text-gray-800">Unit 102 - Security Concerns</p>
+                                            <p className="text-xs text-gray-500">Reported 48 days ago</p>
+                                        </div>
+                                        <span className="px-2 py-1 bg-orange-100 text-orange-800 rounded-full text-xs font-semibold">Medium</span>
+                                    </div>
+                                    <p className="text-xs text-gray-600">Tenant: "Gate security is unreliable, feeling unsafe"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                {activeTab === 'credit' && (
+                    <div className="space-y-4">
+                        <div className="bg-orange-50 p-4 rounded-lg border border-orange-200">
+                            <h4 className="font-semibold text-orange-800 mb-2">Tenant Credit Health</h4>
+                            <div className="space-y-2">
+                                <div className="flex justify-between items-center">
+                                    <span className="text-sm text-gray-700">2 tenants' credit scores dropped in last 6 months</span>
+                                    <span className="text-lg font-bold text-orange-600">Rising Default Risk</span>
+                                </div>
+                                <p className="text-xs text-orange-700">Credit deterioration indicates financial stress - higher risk of non-payment</p>
+                                <div className="bg-white p-2 rounded border-l-4 border-orange-400">
+                                    <p className="text-xs font-medium text-orange-800">Action Required:</p>
+                                    <p className="text-xs text-orange-700">"Monitor payment patterns and consider early intervention."</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="bg-white p-4 rounded-lg border">
+                            <h4 className="font-semibold text-gray-800 mb-4">Credit Score Changes</h4>
+                            <div className="space-y-3">
+                                <div className="flex justify-between items-center p-3 bg-gray-50 rounded">
+                                    <div>
+                                        <p className="font-medium text-sm text-gray-800">Fatima Ahmed - Unit A2</p>
+                                        <p className="text-xs text-gray-500">Score dropped from 720 to 580</p>
+                                    </div>
+                                    <div className="text-right">
+                                        <p className="text-sm font-semibold text-red-600">-140 points</p>
+                                        <p className="text-xs text-red-600">High Risk</p>
+                                    </div>
+                                </div>
+                                <div className="flex justify-between items-center p-3 bg-gray-50 rounded">
+                                    <div>
+                                        <p className="font-medium text-sm text-gray-800">Chinedu Okoro - Unit B1</p>
+                                        <p className="text-xs text-gray-500">Score dropped from 680 to 620</p>
+                                    </div>
+                                    <div className="text-right">
+                                        <p className="text-sm font-semibold text-orange-600">-60 points</p>
+                                        <p className="text-xs text-orange-600">Medium Risk</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
-          </div>
-        )}
-      </div>
-    </DashboardComponent>
-  );
+        </DashboardComponent>
+    );
 };
 
 // Custom Multi-Select Component
-const MultiSelectDropdown = ({ 
-    options, 
-    selectedValues, 
-    onChange, 
+const MultiSelectDropdown = ({
+    options,
+    selectedValues,
+    onChange,
     placeholder = "Select options...",
     className = ""
 }: {
@@ -1832,6 +1827,9 @@ export const SignupForm = () => {
         additionalQuestions: '',
         wantsDashboard: false,
         wantsCourse: false,
+        oneOnOneConsultation: false,
+        liveQuestionAndAnswerSessions: false,
+        physicalEvents: false,
         whatsappConsent: false
     });
 
@@ -1859,7 +1857,7 @@ export const SignupForm = () => {
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { name, value, type } = e.target;
-        
+
         if (name === 'locations') {
             const target = e.target as HTMLInputElement;
             const locationValue = target.value;
@@ -1885,14 +1883,14 @@ export const SignupForm = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsSubmitting(true);
-        
+
         // Validate required fields for in-person sessions
         if (formData.sessionType === 'physical' && !formData.preferredDate) {
             alert('Preferred date is required for in-person sessions.');
             setIsSubmitting(false);
             return;
         }
-        
+
         // If virtual session selected, save form data first, then redirect to Calendly
         if (formData.sessionType === 'virtual') {
             try {
@@ -1908,7 +1906,7 @@ export const SignupForm = () => {
 
                 if (response.ok) {
                     // Form saved successfully, now redirect to Calendly with pre-filled data
-                    const calendlyUrl = `https://calendly.com/goodtenantsvisits/new-meeting?name=${encodeURIComponent(formData.name)}&email=${encodeURIComponent(formData.email)}&phone=${encodeURIComponent(formData.phone)}`;
+                    const calendlyUrl = `https://calendly.com/liveableindex/new-meeting?name=${encodeURIComponent(formData.name)}&email=${encodeURIComponent(formData.email)}&phone=${encodeURIComponent(formData.phone)}`;
                     window.open(calendlyUrl, '_blank');
                     setIsSuccess(true);
                     // Reset form
@@ -1925,6 +1923,9 @@ export const SignupForm = () => {
                         additionalQuestions: '',
                         wantsDashboard: false,
                         wantsCourse: false,
+                        oneOnOneConsultation: false,
+                        liveQuestionAndAnswerSessions: false,
+                        physicalEvents: false,
                         whatsappConsent: false
                     });
                 } else {
@@ -1938,7 +1939,7 @@ export const SignupForm = () => {
             }
             return;
         }
-        
+
         try {
             const response = await fetch('/api/submit-form', {
                 method: 'POST',
@@ -1966,6 +1967,9 @@ export const SignupForm = () => {
                     additionalQuestions: '',
                     wantsDashboard: false,
                     wantsCourse: false,
+                    oneOnOneConsultation: false,
+                    liveQuestionAndAnswerSessions: false,
+                    physicalEvents: false,
                     whatsappConsent: false
                 });
             } else {
@@ -2203,7 +2207,7 @@ export const SignupForm = () => {
                                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900"
                                 />
                             </div>
-                            
+
                             <div>
                                 <label className="block text-sm font-medium text-white mb-2">
                                     <Clock className="w-4 h-4 inline mr-2" />
@@ -2239,8 +2243,8 @@ export const SignupForm = () => {
 
                     {/* Interest Checkboxes */}
                     <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20">
-                        <h3 className="text-lg font-semibold text-white mb-4">👉 Tick the boxes for your Dashboard and Finance Course</h3>
-                        
+                        <h3 className="text-lg font-semibold text-white mb-4">👉 Tick the boxes to select what you're interested in</h3>
+
                         <div className="space-y-4">
                             <label className="flex items-start space-x-3 cursor-pointer">
                                 <input
@@ -2252,8 +2256,8 @@ export const SignupForm = () => {
                                 />
                                 <div>
                                     <p className="font-medium text-white">
-                                        <a 
-                                            href="#dashboard" 
+                                        <a
+                                            href="#dashboard"
                                             className="text-blue-300 hover:text-blue-200 underline mr-2"
                                             onClick={(e) => {
                                                 e.preventDefault();
@@ -2281,8 +2285,8 @@ export const SignupForm = () => {
                                 />
                                 <div>
                                     <p className="font-medium text-white">
-                                        <a 
-                                            href="#course" 
+                                        <a
+                                            href="#course"
                                             className="text-blue-300 hover:text-blue-200 underline mr-2"
                                             onClick={(e) => {
                                                 e.preventDefault();
@@ -2296,6 +2300,53 @@ export const SignupForm = () => {
                                     </p>
                                     <p className="text-sm text-gray-300 mt-1">
                                         Master the financial strategies that separate successful landlords from the rest. FREE during Landlord Week.
+                                    </p>
+                                </div>
+                            </label>
+
+                            <label className="flex items-start space-x-3 cursor-pointer">
+                                <input
+                                    type="checkbox"
+                                    name="oneOnOneConsultation"
+                                    checked={formData.oneOnOneConsultation}
+                                    onChange={handleInputChange}
+                                    className="mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                                />
+                                <div>
+                                    <p className="font-medium text-white">
+                                        One-on-one consultation sessions
+                                    </p>
+                                </div>
+                            </label>
+
+
+                            <label className="flex items-start space-x-3 cursor-pointer">
+                                <input
+                                    type="checkbox"
+                                    name="liveQuestionAndAnswerSessions"
+                                    checked={formData.liveQuestionAndAnswerSessions}
+                                    onChange={handleInputChange}
+                                    className="mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                                />
+                                <div>
+                                    <p className="font-medium text-white">
+                                        Live Question and Answer Sessions
+                                    </p>
+                                </div>
+                            </label>
+
+
+                            <label className="flex items-start space-x-3 cursor-pointer">
+                                <input
+                                    type="checkbox"
+                                    name="physicalEvents"
+                                    checked={formData.physicalEvents}
+                                    onChange={handleInputChange}
+                                    className="mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                                />
+                                <div>
+                                    <p className="font-medium text-white">
+                                        Physical Events
                                     </p>
                                 </div>
                             </label>
@@ -2323,7 +2374,7 @@ export const SignupForm = () => {
                         <p className="text-xl text-white mb-6">
                             👉 And take back control of your wealth.
                         </p>
-                        
+
                         <button
                             type="submit"
                             disabled={isSubmitting}
@@ -2372,7 +2423,7 @@ export const StrategicInsightsDashboard = () => {
             className={`bg-white rounded-2xl shadow-2xl p-8`}
         >
             <h3 className="text-2xl font-semibold text-gray-800 mb-6">Strategic Insights Dashboard</h3>
-            
+
             <div className="space-y-6">
                 {/* Key Metrics */}
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
@@ -2384,7 +2435,7 @@ export const StrategicInsightsDashboard = () => {
                         <p className="text-lg font-bold text-green-600">+30%</p>
                         <p className="text-xs text-gray-500">In your area</p>
                     </div>
-                    
+
                     <div className="bg-blue-50 p-3 rounded-lg border border-blue-200">
                         <div className="flex items-center space-x-2 mb-1">
                             <DollarSign className="w-4 h-4 text-blue-600" />
@@ -2393,7 +2444,7 @@ export const StrategicInsightsDashboard = () => {
                         <p className="text-lg font-bold text-blue-600">₦2M</p>
                         <p className="text-xs text-gray-500">Per unit yearly</p>
                     </div>
-                    
+
                     <div className="bg-purple-50 p-3 rounded-lg border border-purple-200">
                         <div className="flex items-center space-x-2 mb-1">
                             <BarChart3 className="w-4 h-4 text-purple-600" />
@@ -2402,7 +2453,7 @@ export const StrategicInsightsDashboard = () => {
                         <p className="text-lg font-bold text-purple-600">22%</p>
                         <p className="text-xs text-gray-500">3 years</p>
                     </div>
-                    
+
                     <div className="bg-red-50 p-3 rounded-lg border border-red-200">
                         <div className="flex items-center space-x-2 mb-1">
                             <AlertTriangle className="w-4 h-4 text-red-600" />
