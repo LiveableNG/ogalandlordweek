@@ -31,16 +31,16 @@ const HeroSection = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: 'url(/house-image.png)'
         }}
       />
-      
+
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60" />
-      
+
       <div className={`text-center px-6 z-10 max-w-5xl transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <h1 className="text-3xl md:text-7xl font-bold text-white mb-8 leading-tight">
           Oga Landlord!!!
@@ -49,7 +49,7 @@ const HeroSection = () => {
         </h1>
 
         <p className="text-lg md:text-2xl text-gray-300 mb-12 font-light max-w-4xl mx-auto">
-          Every year in Nigeria, landlords like you are losing money they will never recover. Some don't realize how much damage tenants are quietly causing until it's too late.
+          Every year in Nigeria, landlords like you are losing money they will never recover. Some don't realize how much damage is happening until it's too late.
           <br />
           <span className="text-red-400 font-medium">Others only see the true cost when a tenant is about to move out — losses and repairs that swallow years of rent in one bite.</span>
         </p>
@@ -75,7 +75,7 @@ const ParallaxSection = () => {
           backgroundRepeat: 'no-repeat'
         }}
       />
-      
+
       {/* Background Image for Desktop */}
       <div
         className="w-full h-full bg-cover bg-center bg-no-repeat hidden md:block"
@@ -86,21 +86,6 @@ const ParallaxSection = () => {
           backgroundRepeat: 'no-repeat'
         }}
       />
-      
-      {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-black bg-opacity-50" />
-      
-      {/* Text overlay */}
-      <div className="absolute inset-0 flex items-end justify-center z-10 pb-16">
-        <div className="text-center px-6 max-w-4xl">
-          <h2 className="text-2xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            If you don't SEE and CONTROL what's happening with your properties, you're not in charge.
-          </h2>
-          <p className="text-lg md:text-2xl text-gray-200 font-medium">
-            Your tenants, your property manager, even life itself is running the show… not you.
-          </p>
-        </div>
-      </div>
     </section>
   );
 };
@@ -132,10 +117,7 @@ const ProblemStorySection = () => {
             </h2>
             <div className="space-y-6 text-lg md:text-2xl text-white">
               <p className="font-medium">
-                Do you know, right now, which of your tenants has paid rent — and who is still owing?
-              </p>
-              <p className="font-medium">
-                Do you know how much you’ve spent on maintenance in the last 6 months?
+                Do you have a risky tenant who may delay rent after year one, or are you at risk of losing 2–3 years’ worth of rent to repairs when they eventually move out?
               </p>
               <p className="font-medium">
                 Can you prove, with data, if your property is making you money… or quietly draining it?
@@ -143,14 +125,11 @@ const ProblemStorySection = () => {
             </div>
 
             <div className="space-y-6 text-lg md:text-2xl text-red-400 font-bold">
-              <p>The truth? Most landlords can't.<br />That is how money burns away quietly — how generational wealth disappears.</p>
+              <p>The truth? Most landlords can't.<br />New landlords also fall into the same trap.</p>
             </div>
 
             <div className="space-y-6 text-lg md:text-2xl text-yellow-400 font-medium">
-              <p>And if you’re looking to own your first property,<br /><br />Do you know how much visibility you’ll need to avoid the same trap?
-              <br />
-                Or will you just let life — and tenants — run the show instead of you?
-              </p>
+              <p>That is how wealth quietly disappears.</p>
             </div>
           </div>
         </div>
@@ -190,7 +169,7 @@ export default function Home() {
                     <HomeIcon className="w-5 h-5 text-blue-600" />
                     <p className="text-sm text-gray-600 font-medium">Units</p>
                   </div>
-                  <p className="text-lg md:text-2xl font-bold text-blue-600">42</p>
+                  <p className="text-lg md:text-xl font-bold text-blue-600">42</p>
                   <div className="mt-1 text-xs text-gray-500">
                     <div className="flex justify-between items-center">
                       <span>8 Abuja, 30 Lagos, 4 Oyo</span>
@@ -205,7 +184,7 @@ export default function Home() {
                     <Users className="w-5 h-5 text-blue-600" />
                     <p className="text-sm text-gray-600 font-medium">Tenants</p>
                   </div>
-                  <p className="text-lg md:text-2xl font-bold text-blue-600">38</p>
+                  <p className="text-lg md:text-xl font-bold text-blue-600">38</p>
                   <p className="text-xs text-red-600 font-semibold">Default Rate: 12%</p>
                 </div>
 
@@ -214,7 +193,7 @@ export default function Home() {
                     <DollarSign className="w-5 h-5 text-blue-600" />
                     <p className="text-sm text-gray-600 font-medium">Total Value</p>
                   </div>
-                  <p className="text-lg md:text-2xl font-bold text-blue-600">₦59m</p>
+                  <p className="text-lg md:text-xl font-bold text-blue-600">₦59m</p>
                   <p className="text-xs text-gray-500">Annual</p>
                 </div>
 
@@ -235,7 +214,7 @@ export default function Home() {
               <div className="grid lg:grid-cols-2 gap-6">
                 {/* PERFORMING/HEALTHY */}
                 <div className="bg-green-50 p-4 rounded-lg border border-green-200">
-                  <h4 className="font-semibold mb-4 text-green-800 text-sm flex items-center">
+                  <h4 className="font-semibold mb-4 text-green-800 text-2xl flex items-center">
                     <CheckCircle className="w-4 h-4 mr-2" />
                     WHAT'S WORKING
                   </h4>
@@ -271,7 +250,7 @@ export default function Home() {
 
                 {/* UNDERPERFORMING/AT RISK */}
                 <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
-                  <h4 className="font-semibold mb-4 text-yellow-800 text-sm flex items-center">
+                  <h4 className="font-semibold mb-4 text-yellow-800 text-2xl flex items-center">
                     <AlertTriangle className="w-4 h-4 mr-2" />
                     WHAT'S NOT WORKING
                   </h4>
@@ -307,7 +286,7 @@ export default function Home() {
 
               {/* CRITICAL ISSUES */}
               <div className="bg-red-50 p-4 rounded-lg border border-red-200">
-                <h4 className="font-semibold mb-4 text-red-800 text-sm flex items-center">
+                <h4 className="font-semibold mb-4 text-red-800 text-2xl flex items-center">
                   <XCircle className="w-4 h-4 mr-2" />
                   WHAT'S CRITICAL
                 </h4>
@@ -346,17 +325,17 @@ export default function Home() {
                   <div>
                     <h4 className="font-semibold text-red-800 text-sm mb-1">Immediate Action Required</h4>
                     <p className="text-sm text-red-700">
-                      <strong>reduce text under immediate action required.</strong>
+                      <strong>Without this dashboard, you’re losing money.</strong>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          
+
           {/* Sign up button */}
           <div className="text-center mt-12">
-            <button 
+            <button
               onClick={() => {
                 const signupSection = document.querySelector('#signup-form');
                 signupSection?.scrollIntoView({ behavior: 'smooth' });
@@ -469,10 +448,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-          
+
           {/* Sign up button */}
           <div className="text-center mt-12">
-            <button 
+            <button
               onClick={() => {
                 const signupSection = document.querySelector('#signup-form');
                 signupSection?.scrollIntoView({ behavior: 'smooth' });
@@ -540,10 +519,10 @@ export default function Home() {
               Start your journey to becoming a true Oga Landlord today.
             </p>
           </div>
-          
+
           {/* Sign up button */}
           <div className="text-center mt-12">
-            <button 
+            <button
               onClick={() => {
                 const signupSection = document.querySelector('#signup-form');
                 signupSection?.scrollIntoView({ behavior: 'smooth' });
@@ -674,10 +653,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-          
+
           {/* Sign up button */}
           <div className="text-center mt-12">
-            <button 
+            <button
               onClick={() => {
                 const signupSection = document.querySelector('#signup-form');
                 signupSection?.scrollIntoView({ behavior: 'smooth' });
@@ -698,18 +677,18 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           {/* Logos */}
           <div className="flex justify-center items-center space-x-8 mb-6">
-            <img 
-              src="https://api.liveable.ng/images/gt-logo.png" 
-              alt="GoodTenants" 
+            <img
+              src="https://api.liveable.ng/images/gt-logo.png"
+              alt="GoodTenants"
               className="h-8 w-auto"
             />
-            <img 
-              src="https://www.liveable.ng/assets/logo-BVMJXcoO.svg" 
-              alt="Liveable" 
+            <img
+              src="https://www.liveable.ng/assets/logo-BVMJXcoO.svg"
+              alt="Liveable"
               className="h-8 w-auto"
             />
           </div>
-          
+
           <p className="text-gray-400">
             © {new Date().getFullYear()} Landlord Finance Mastery. Transform your rental property business today.
           </p>
