@@ -1379,8 +1379,8 @@ export const FinancialSafetyTracker = () => {
                     <button
                         onClick={() => setActiveTab('remittance')}
                         className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'remittance'
-                                ? 'bg-white text-gray-900 shadow-sm'
-                                : 'text-gray-600 hover:text-gray-900'
+                            ? 'bg-white text-gray-900 shadow-sm'
+                            : 'text-gray-600 hover:text-gray-900'
                             }`}
                     >
                         Remittance Lag
@@ -1388,8 +1388,8 @@ export const FinancialSafetyTracker = () => {
                     <button
                         onClick={() => setActiveTab('expenses')}
                         className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'expenses'
-                                ? 'bg-white text-gray-900 shadow-sm'
-                                : 'text-gray-600 hover:text-gray-900'
+                            ? 'bg-white text-gray-900 shadow-sm'
+                            : 'text-gray-600 hover:text-gray-900'
                             }`}
                     >
                         Expense Transparency
@@ -1526,8 +1526,8 @@ export const ReputationTracker = () => {
                     <button
                         onClick={() => setActiveTab('complaints')}
                         className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'complaints'
-                                ? 'bg-white text-gray-900 shadow-sm'
-                                : 'text-gray-600 hover:text-gray-900'
+                            ? 'bg-white text-gray-900 shadow-sm'
+                            : 'text-gray-600 hover:text-gray-900'
                             }`}
                     >
                         Tenant Complaints
@@ -1535,8 +1535,8 @@ export const ReputationTracker = () => {
                     <button
                         onClick={() => setActiveTab('credit')}
                         className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'credit'
-                                ? 'bg-white text-gray-900 shadow-sm'
-                                : 'text-gray-600 hover:text-gray-900'
+                            ? 'bg-white text-gray-900 shadow-sm'
+                            : 'text-gray-600 hover:text-gray-900'
                             }`}
                     >
                         Credit Health
@@ -2054,6 +2054,7 @@ export const SignupForm = () => {
                             Or you can step into the light, take control, and finally enjoy the peace of mind you deserve.
                         </p>
                     </div>
+                    <div id="signup-form"></div>
                     <div className="bg-red-900 bg-opacity-20 border border-red-500 rounded-2xl p-8 max-w-4xl mx-auto">
                         <p className="text-lg md:text-3xl text-red-400 font-bold mb-4">
                             Don't be the landlord who discovers losses when it's too late.
