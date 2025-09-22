@@ -1179,77 +1179,69 @@ export const CourseSection = () => {
     const modules = [
         {
             id: 1,
-            title: "Foundations of Landlord Finance",
+            title: "Introduction to Landlord Finance",
+            presenter: "Adekunle Jinadu, CEO GoodTenants",
             lessons: [
-                "1.1 Introduction to Real Estate Income Models",
-                "• Rent vs. appreciation",
-                "• Passive vs. active income",
-                "1.2 Key Financial Metrics for Landlords",
-                "• Cash flow",
-                "• Cap rate, ROI, and IRR",
-                "• Net operating income (NOI)",
-                "1.3 Setting Income Goals & Financial Vision",
-                "• Personal financial blueprint",
-                "• SMART income goals for your rental business"
+                "1a. Reasons why African landlords invest in rental property",
+                "• Understanding investment motivations in African markets",
+                "• Cultural and economic factors driving property investment",
+                "• Long-term wealth building through real estate",
+                "1b. Why landlords don't achieve the goals they set",
+                "• Common pitfalls and mistakes in property investment",
+                "• Lack of proper financial planning and systems",
+                "• Market knowledge gaps and poor decision making"
             ]
         },
         {
             id: 2,
-            title: "Maximizing Rental Income",
+            title: "Maximizing ROI on your Rental Assets",
+            presenter: "Adekunle Jinadu, CEO GoodTenants",
             lessons: [
-                "2.1 Pricing Strategy & Market Positioning",
-                "• Market research methods",
-                "• Dynamic pricing and how to apply it",
-                "2.2 Increasing Property Value to Justify Higher Rent",
-                "• High ROI upgrades (kitchens, bathrooms, flooring)",
-                "• Curb appeal and property staging",
-                "2.3 Ancillary Income Streams",
-                "• Pet rent, storage, parking, laundry, etc.",
-                "• Offering furnished rentals or short-term stays"
+                "• Strategic approaches to rental property ROI optimization",
+                "• Market analysis and property selection criteria",
+                "• Investment timing and market cycles",
+                "• Portfolio diversification strategies",
+                "• Risk management and return maximization"
             ]
         },
         {
             id: 3,
-            title: "Reducing Costs & Boosting Profit Margins",
+            title: "Property Management Finance 1: Understanding Property Revenue",
+            presenter: "Tola Oyenekan, Head of Research, Diya Fatimilehin & Co.",
             lessons: [
-                "3.1 Operating Expense Optimization",
-                "• Budgeting for maintenance",
-                "• Cutting utilities and service costs smartly",
-                "3.2 Smart Tax Strategies",
-                "• Depreciation benefits",
-                "• Deductible expenses",
-                "• Working with a real estate-savvy CPA",
-                "3.3 Insurance, Risk & Vacancy Management",
-                "• Choosing proper coverage",
-                "• Preventing vacancies and bad debt"
+                "• Introducing revenue types - Rent/lease revenue & capital gains",
+                "• Setting rent prices - market analysis and pricing strategies",
+                "• Optimizing rent value with Finishing/Aesthetics",
+                "• Rent Review timelines and considerations",
+                "• Benchmarking rent in local markets",
+                "• Price elasticity vs. tenant retention",
+                "• Revenue planning: primary, secondary, and passive streams"
             ]
         },
         {
             id: 4,
-            title: "Rent Collection & Financial Systems",
+            title: "Property Management Finance 2: Expenses, Caution fees, taxes",
+            presenter: "Tola Oyenekan, Head of Research, Diya Fatimilehin & Co.",
             lessons: [
-                "4.1 Setting Up Efficient Rent Collection Systems",
-                "• Online tools (e.g., Avail, RentRedi, Buildium)",
-                "• Late fees and incentives",
-                "4.2 Bookkeeping & Accounting Basics",
-                "• Separating personal vs. rental finances",
-                "• Using software like QuickBooks or Stessa",
-                "4.3 Financial Reporting & Analysis",
-                "• Monthly income statements",
-                "• KPI tracking dashboards for landlords"
+                "• Understanding and managing property expenses",
+                "• Caution fees and security deposit management",
+                "• Tax implications and optimization strategies",
+                "• Operating expense budgeting and control",
+                "• Maintenance cost planning and forecasting",
+                "• Legal and regulatory compliance costs"
             ]
         },
         {
             id: 5,
-            title: "Financing, Refinancing, and Leveraging Debt",
+            title: "Understanding Short Term Rentals in African Cities",
+            presenter: "Feyi Makinde, Founder, Reeka",
             lessons: [
-                "5.1 Understanding Rental Property Financing Options",
-                "• Conventional, DSCR, portfolio loans, etc.",
-                "5.2 Using Leverage to Expand and Multiply Returns",
-                "• When and how to use other people's money",
-                "5.3 Refinance, Cash-Out, and HELOCs",
-                "• Case studies: When it makes sense",
-                "• Risks and rewards"
+                "• Short-term rental opportunities in Lagos, Nairobi",
+                "• Airbnb and Shortlets market analysis",
+                "• Regulatory considerations and compliance",
+                "• Revenue optimization strategies for short-term rentals",
+                "• Property preparation and management for short-term rentals",
+                "• Market trends and future opportunities"
             ]
         },
     ];
@@ -1303,6 +1295,9 @@ export const CourseSection = () => {
                                             <h4 className="text-lg font-semibold text-white mb-1">
                                                 Module {module.id}: {module.title}
                                             </h4>
+                                            <p className="text-blue-300 text-sm font-medium mb-1">
+                                                {module.presenter}
+                                            </p>
                                             <p className="text-gray-300 text-sm">
                                                 {module.lessons.length} lessons
                                             </p>
