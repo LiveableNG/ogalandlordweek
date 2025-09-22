@@ -473,6 +473,214 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Collaboration and Recognition Section */}
+      <section className="py-24 px-6 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full -translate-y-48 translate-x-48 opacity-20"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-indigo-100 rounded-full translate-y-40 -translate-x-40 opacity-20"></div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          {/* Header */}
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center space-x-2 bg-white text-blue-600 px-6 py-3 rounded-full text-sm font-semibold mb-8 shadow-lg">
+              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              <span>Strategic Partnership</span>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+              In collaboration with
+              <span className="block text-blue-600 mt-2">GOODTENANTS</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Awarded Proptech Company of 2025/26 - Leading the future of property technology
+            </p>
+          </div>
+
+          {/* Main Partnership Card */}
+          <div className="relative mb-20">
+            <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-100">
+              <div className="flex flex-col lg:flex-row items-start space-y-8 lg:space-y-0 lg:space-x-12">
+                {/* Logo Section */}
+                <div className="flex-shrink-0">
+                  <div className="relative">
+                    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 shadow-lg">
+                      <img
+                        src="https://api.liveable.ng/images/gt-logo.png"
+                        alt="GOODTENANTS"
+                        className="h-24 w-auto"
+                      />
+                    </div>
+                    {/* Award badges */}
+                    <div className="absolute -top-2 -right-2 flex space-x-2">
+                      <div className="bg-yellow-100 rounded-full p-2 shadow-md">
+                        <img
+                          src="https://www.goodtenants.io/_next/image?url=%2Fassets%2Fbranding%2Faward.png&w=64&q=75"
+                          alt="Award"
+                          className="h-6 w-6"
+                        />
+                      </div>
+                      <div className="bg-blue-100 rounded-full p-2 shadow-md">
+                        <img
+                          src="https://www.goodtenants.io/_next/image?url=%2Fassets%2Fbranding%2Fniesv-logo.png&w=64&q=75"
+                          alt="NIESV"
+                          className="h-6 w-6"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="flex-1">
+                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    GOODTENANTS
+                  </h3>
+                  <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                    Revolutionizing property management through innovative technology solutions. 
+                    Recognized by industry leaders for excellence in proptech innovation and 
+                    transforming the real estate landscape across Nigeria.
+                  </p>
+                  <div className="flex flex-wrap gap-4 mb-6">
+                    <div className="bg-yellow-50 text-yellow-700 px-4 py-2 rounded-full text-sm font-medium">
+                      PropTech Company of the Period – Gold
+                    </div>
+                    <div className="bg-indigo-50 text-indigo-700 px-4 py-2 rounded-full text-sm font-medium">
+                      NIESV Lagos State Branch
+                    </div>
+                    <div className="bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium">
+                      Industry Leader
+                    </div>
+                  </div>
+                  
+                  {/* Award Poster and Video */}
+                  <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6">
+                    <div className="group cursor-pointer">
+                      <img
+                        src="https://www.goodtenants.io/assets/branding/poster.png"
+                        alt="GOODTENANTS Award Poster"
+                        className="w-48 h-32 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow duration-300"
+                      />
+                    </div>
+                    <div className="group cursor-pointer">
+                      <div className="relative w-48 h-32 bg-gray-900 rounded-lg shadow-lg group-hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                        <video
+                          className="w-full h-full object-cover"
+                          muted
+                          loop
+                          playsInline
+                        >
+                          <source src="https://www.goodtenants.io/assets/branding/vid.mp4" type="video/mp4" />
+                        </video>
+                        <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center group-hover:bg-opacity-20 transition-all duration-300">
+                          <div className="w-12 h-12 bg-white bg-opacity-90 rounded-full flex items-center justify-center">
+                            <svg className="w-6 h-6 text-gray-800 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M8 5v14l11-7z"/>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Partners Grid */}
+          <div className="mb-20">
+            <div className="text-center mb-16">
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Design Collaborations
+              </h3>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Working with industry leaders to deliver exceptional property management solutions
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-3 md:grid-cols-6 gap-8">
+              {[
+                { name: "Estate Links", logo: "https://www.goodtenants.io/_next/image?url=%2Fassets%2Fcompany-logos%2F04.png&w=384&q=75" },
+                { name: "Diya Fatimilehin", logo: "https://www.goodtenants.io/_next/image?url=%2Fassets%2Fcompany-logos%2F03.png&w=384&q=75" },
+                { name: "Office Phase", logo: "https://www.goodtenants.io/_next/image?url=%2Fassets%2Fcompany-logos%2F05.png&w=384&q=75" },
+                { name: "Prindex", logo: "https://www.goodtenants.io/_next/image?url=%2Fassets%2Fcompany-logos%2F06.png&w=384&q=75" },
+                { name: "Rydal Mews", logo: "https://www.rydalmewsltd.com/wp-content/uploads/Artboard-2white.jpg" },
+                { name: "Ubosi Eleh", logo: "https://ubosieleh.com/wp-content/uploads/2025/08/image-59.svg" },
+              ].map((partner, index) => (
+                <div key={index} className="group relative">
+                  <div className="bg-white rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-blue-300 group-hover:-translate-y-2">
+                    <div className="w-32 h-32 bg-gray-50 rounded-xl flex items-center justify-center mx-auto group-hover:bg-blue-50 transition-colors duration-300">
+                      <img
+                        src={partner.logo}
+                        alt={partner.name}
+                        className="w-28 h-28 object-contain"
+                      />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Featured In */}
+          <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-100">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Featured In
+              </h3>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Recognized by leading media outlets across Nigeria
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                { 
+                  name: "Businessday", 
+                  desc: "Leading business newspaper", 
+                  logo: "https://www.goodtenants.io/_next/image?url=%2Fassets%2Ffeatured%2F01.png&w=384&q=75",
+                  href: "https://businessday.ng/news/article/how-data-tech-can-help-unlock-property-industrys-potential-atanda/"
+                },
+                { 
+                  name: "ChannelsTV", 
+                  desc: "Reputable news channel", 
+                  logo: "https://www.goodtenants.io/_next/image?url=%2Fassets%2Ffeatured%2F02.png&w=384&q=75",
+                  href: "https://www.youtube.com/watch?v=KL4pg73NOG0"
+                },
+                { 
+                  name: "CityPeople", 
+                  desc: "Popular lifestyle magazine", 
+                  logo: "https://www.goodtenants.io/_next/image?url=%2Fassets%2Ffeatured%2F03.webp&w=384&q=75",
+                  href: "https://www.citypeopleonline.com/niesv-lagos-branch-celebrates-honours-nite-2025-in-grand-style/"
+                }
+              ].map((media, index) => (
+                <a 
+                  key={index} 
+                  href={media.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group text-center block hover:no-underline"
+                >
+                  <div className="group text-center">
+                    <div className="w-24 h-24 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg border border-gray-200">
+                      <img
+                        src={media.logo}
+                        alt={media.name}
+                        className="w-20 h-20 object-contain"
+                      />
+                    </div>
+                    <h4 className="text-gray-900 font-bold text-xl mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                      {media.name}
+                    </h4>
+                    <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors duration-300">
+                      {media.desc}
+                    </p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Strategic Insights and Opportunities Section */}
       <section id="strategic-insights" className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
