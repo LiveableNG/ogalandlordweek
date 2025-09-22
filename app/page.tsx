@@ -534,6 +534,7 @@ export default function Home() {
               <div className="relative w-full h-64 md:h-80 bg-gray-900 rounded-xl overflow-hidden group cursor-pointer">
                 <video
                   className="w-full h-full object-cover"
+                  autoPlay
                   muted
                   loop
                   playsInline
@@ -541,13 +542,6 @@ export default function Home() {
                 >
                   <source src="https://www.goodtenants.io/assets/branding/vid.mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center group-hover:bg-opacity-20 transition-all duration-300">
-                  <div className="w-16 h-16 bg-white bg-opacity-90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-8 h-8 text-gray-800 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z"/>
-                    </svg>
-                  </div>
-                </div>
                 <div className="absolute top-4 left-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                   PropTech Company of the Period – Gold
                 </div>
