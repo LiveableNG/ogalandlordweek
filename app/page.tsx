@@ -573,13 +573,13 @@ export default function Home() {
                 { name: "Ubosi Eleh", logo: "https://ubosieleh.com/wp-content/uploads/2025/08/image-59.svg" },
               ].map((partner, index) => (
                 <div key={index} className="bg-white rounded-lg p-4 text-center hover:shadow-md transition-shadow duration-300 border border-gray-200">
-                  <div className="w-16 h-16 bg-gray-50 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  {/* <div className="w-16 h-16 bg-gray-50 rounded-lg flex items-center justify-center mx-auto mb-3"> */}
                     <img
                       src={partner.logo}
                       alt={partner.name}
-                      className="w-12 h-12 object-contain"
+                      className="w-auto h-12 object-contain"
                     />
-                  </div>
+                  {/* </div> */}
                 </div>
               ))}
             </div>
