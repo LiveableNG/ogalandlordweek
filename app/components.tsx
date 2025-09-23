@@ -1830,6 +1830,7 @@ export const SignupForm = () => {
         oneOnOneConsultation: false,
         liveQuestionAndAnswerSessions: false,
         physicalEvents: false,
+        healthyWealthyParty: false,
         whatsappConsent: false
     });
 
@@ -2348,6 +2349,21 @@ export const SignupForm = () => {
                                 <div>
                                     <p className="font-medium text-white">
                                         Physical Events
+                                    </p>
+                                </div>
+                            </label>
+
+                            <label className="flex items-start space-x-3 cursor-pointer">
+                                <input
+                                    type="checkbox"
+                                    name="healthyWealthyParty"
+                                    checked={formData.healthyWealthyParty}
+                                    onChange={handleInputChange}
+                                    className="mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                                />
+                                <div>
+                                    <p className="font-medium text-white">
+                                        Healthy and Wealthy landlords party - Dec 14
                                     </p>
                                 </div>
                             </label>
