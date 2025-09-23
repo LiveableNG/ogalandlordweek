@@ -561,7 +561,6 @@ export default function Home() {
               {[
                 { name: "Estate Links", logo: "https://www.goodtenants.io/_next/image?url=%2Fassets%2Fcompany-logos%2F04.png&w=384&q=75" },
                 { name: "Diya Fatimilehin", logo: "https://www.goodtenants.io/_next/image?url=%2Fassets%2Fcompany-logos%2F03.png&w=384&q=75" },
-                { name: "Office Phase", logo: "https://www.goodtenants.io/_next/image?url=%2Fassets%2Fcompany-logos%2F05.png&w=384&q=75" },
                 { name: "Prindex", logo: "https://www.goodtenants.io/_next/image?url=%2Fassets%2Fcompany-logos%2F06.png&w=384&q=75" },
                 { name: "Rydal Mews", logo: "https://www.rydalmewsltd.com/wp-content/uploads/Artboard-2white.jpg" },
                 { name: "Ubosi Eleh", logo: "https://ubosieleh.com/wp-content/uploads/2025/08/image-59.svg" },
