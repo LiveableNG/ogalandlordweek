@@ -1907,7 +1907,7 @@ export const SignupForm = () => {
 
                 if (response.ok) {
                     // Form saved successfully, now redirect to Calendly with pre-filled data
-                    const calendlyUrl = `https://calendly.com/liveableindex/new-meeting?name=${encodeURIComponent(formData.name)}&email=${encodeURIComponent(formData.email)}&phone=${encodeURIComponent(formData.phone)}`;
+                    const calendlyUrl = `https://calendly.com/liveableindex/advisory-sessions-new-meeting?name=${encodeURIComponent(formData.name)}&email=${encodeURIComponent(formData.email)}&phone=${encodeURIComponent(formData.phone)}`;
                     window.open(calendlyUrl, '_blank');
                     setIsSuccess(true);
                     // Reset form
