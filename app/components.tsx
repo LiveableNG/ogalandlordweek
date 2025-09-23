@@ -1331,7 +1331,7 @@ export const CourseSection = () => {
                             <div className="text-center mb-6">
                                 <p className="text-gray-600 line-through text-lg">₦150,000</p>
                                 <p className="text-2xl md:text-4xl font-bold text-green-600">FREE</p>
-                                <p className="text-gray-600">During Landlord Week Only</p>
+                                <p className="text-gray-600">During Oga Landlord Week (October 6-10) Only</p>
                             </div>
 
                             <div className="space-y-4 mb-6">
@@ -1992,7 +1992,7 @@ export const SignupForm = () => {
                         <CheckCircle className="w-12 h-12 text-white" />
                     </div>
                     <h2 className="text-2xl md:text-6xl font-bold text-white mb-8">
-                        Welcome to Oga Landlord Week!
+                        Welcome to Oga Landlord Week (October 6-10)!
                     </h2>
                     <div className="space-y-6 text-lg md:text-xl text-green-100 max-w-3xl mx-auto mb-12">
                         <p className="font-medium">
@@ -2300,7 +2300,7 @@ export const SignupForm = () => {
                                         Sign me up for the Landlord Finance Course
                                     </p>
                                     <p className="text-sm text-gray-300 mt-1">
-                                        Master the financial strategies that separate successful landlords from the rest. FREE during Landlord Week.
+                                        Master the financial strategies that separate successful landlords from the rest. FREE during Oga Landlord Week (October 6-10).
                                     </p>
                                 </div>
                             </label>

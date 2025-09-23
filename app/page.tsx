@@ -335,12 +335,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Simple Oga Landlord Week Announcement */}
+      <section className="py-16 px-6 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">
+            Oga Landlord Week<br />
+            <span className="text-yellow-300">October 6-10</span>
+          </h2>
+          <button
+            onClick={() => {
+              const signupSection = document.querySelector('#signup-form');
+              signupSection?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-xl hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+          >
+            Signup Now
+          </button>
+        </div>
+      </section>
+
       {/* Oga Landlord Week Section */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-2xl md:text-6xl font-bold text-gray-800 mb-8">
-              We are bringing you Oga Landlord Week to help you make the most of your properties and grow your returns
+              We are bringing you Oga Landlord Week (October 6-10) to help you make the most of your properties and grow your returns
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">
               One powerful week where you get:
@@ -706,7 +725,7 @@ export default function Home() {
               }}
               className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-red-600 hover:to-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
-              Sign up for Oga Landlord Week now
+              Sign up for Oga Landlord Week (October 6-10) now
             </button>
           </div>
         </div>
@@ -777,7 +796,7 @@ export default function Home() {
               }}
               className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-red-600 hover:to-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
-              Learn more during Oga Landlord week
+              Learn more during Oga Landlord Week (October 6-10)
             </button>
           </div>
         </div>
@@ -795,7 +814,7 @@ export default function Home() {
               EXCLUSIVE EVENT
             </div>
             <h2 className="text-2xl md:text-6xl font-bold text-gray-800 mb-8">
-              Everything you've seen till now is exactly why we created Oga Landlord Week
+              Everything you've seen till now is exactly why we created Oga Landlord Week (October 6-10)
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">
               One powerful week where you get:
@@ -911,7 +930,7 @@ export default function Home() {
               }}
               className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-red-600 hover:to-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
-              Sign up for Oga Landlord Week now
+              Sign up for Oga Landlord Week (October 6-10) now
             </button>
           </div>
         </div>
