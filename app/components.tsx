@@ -1927,7 +1927,8 @@ export const SignupForm = () => {
                         oneOnOneConsultation: false,
                         liveQuestionAndAnswerSessions: false,
                         physicalEvents: false,
-                        whatsappConsent: false
+                        whatsappConsent: false,
+                        healthyWealthyParty: false
                     });
                 } else {
                     alert(result.error || 'Something went wrong. Please try again.');
@@ -1971,7 +1972,8 @@ export const SignupForm = () => {
                     oneOnOneConsultation: false,
                     liveQuestionAndAnswerSessions: false,
                     physicalEvents: false,
-                    whatsappConsent: false
+                    whatsappConsent: false,
+                    healthyWealthyParty: false
                 });
             } else {
                 alert(result.error || 'Something went wrong. Please try again.');
